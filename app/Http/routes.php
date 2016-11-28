@@ -14,3 +14,29 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('/reportes', 'ReporteController');
+
+/*****************/
+/*PETICIONES AJAX*/
+Route::post('/ajax/comboMarca', 'AjaxController@comboMarca');
+Route::post('/ajax/comboDepartamento', 'AjaxController@comboDepartamento');
+Route::post('/ajax/comboCategoria', 'AjaxController@comboCategoria');
+Route::post('/ajax/comboPresentacion', 'AjaxController@comboPresentacion');
+Route::post('/ajax/comboProductos', 'AjaxController@comboProductos');
+Route::post('/ajax/comboGrupo', 'AjaxController@comboGrupo');
+Route::post('/ajax/comboFormato', 'AjaxController@comboFormato');
+Route::post('/ajax/comboCadena', 'AjaxController@comboCadena');
+Route::post('/ajax/comboSucursal', 'AjaxController@comboSucursal');
+Route::post('/ajax/busqueda', 'AjaxController@busqueda');
+/*****************/
+/*****************/
+
+/*Route::get('/reportes', function () {
+    return view('reportes');
+});*/
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
