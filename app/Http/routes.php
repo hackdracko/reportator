@@ -29,6 +29,7 @@ Route::post('/ajax/comboGrupo', 'AjaxController@comboGrupo');
 Route::post('/ajax/comboFormato', 'AjaxController@comboFormato');
 Route::post('/ajax/comboCadena', 'AjaxController@comboCadena');
 Route::post('/ajax/comboSucursal', 'AjaxController@comboSucursal');
+Route::get('/download/{file}', 'AjaxController@downloadFile');
 Route::post('/ajax/busqueda', 'AjaxController@busqueda');
 /*****************/
 /*****************/

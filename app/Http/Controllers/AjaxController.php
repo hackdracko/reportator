@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Excel;
+
 ini_set('memory_limit', '2048M');
 class AjaxController extends Controller
 {
@@ -269,7 +271,32 @@ class AjaxController extends Controller
                     ->select('catproductos.id as id', 'catproductos.nombre as nombre', DB::raw('count(*) as count'));
             }
         $queryConcentradov->whereBetween('fecha', [$request->fechaS, $request->fechaF]);
+        if($accion == 'xls'){
+            $queryConcentradov
+                ->select('*')
+                ->limit('10');
+            $data = collect($queryConcentradov->get())->map(function($x){ return (array) $x; })->toArray();
+            $string = str_random(10);
+            $nameFile = "Reporte_".$string;
+            $this->exportExcel("Reporte_".$string, "Ventas", $data, "xls");
+            return response()
+                ->json(['filename' => $nameFile]);
+        }
         return response()
             ->json(['resultado' => $queryConcentradov->get()]);
+    }
+    public function exportExcel($fileName, $nameSheet, $data, $tipo)
+    {
+        \Maatwebsite\Excel\Facades\Excel::create($fileName, function($excel) use($nameSheet, $data) {
+            $excel->sheet($nameSheet, function($sheet) use($data) {
+                $sheet->fromArray($data);
+            });
+
+        })->store($tipo);
+
+    }
+    public function downloadFile($file)
+    {
+        return response()->download(storage_path().'/exports/' . $file);
     }
 }

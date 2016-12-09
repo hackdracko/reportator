@@ -118,7 +118,20 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="tab_documentos">
-
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <div class="color-demo export-excel" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
+                                <div class="color-view bg-blue bg-font-blue bold uppercase"><img src="https://lh3.ggpht.com/GkNfqm17WFuzaIR87_oz690ErF63hL08Ngj73QtDxyWlCOF80d2gWd2GHrPLJJ-YmHYS=w300-rw" height="100px" width="100px"></div>
+                                <div class="color-info bg-white c-font-14 sbold"> Exportar a Excel </div>
+                            </div>
+                            <div class="text-center"><a id="hrefExcel" href="">Descargar</a></div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <div class="color-demo export-pdf" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
+                                <div class="color-view bg-blue bg-font-blue bold uppercase"><img src="https://lh4.ggpht.com/u9ofV9e2diX3giScuXT46B4A0vxFw8tj5NzHQJVAqAKwL5b_o8CHnO-qiZZIZYHlTg=w300-rw" height="100px" width="100px"></div>
+                                <div class="color-info bg-white c-font-14 sbold"> Exportar a Pdf </div>
+                            </div>
+                            <div class="text-center"><a id="hrefPdf" href="">Descargar</a></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -149,6 +162,39 @@
             datosJson("presentacion");
             datosJson("producto");
 
+        });
+        $('.export-excel').on('click',function(e){
+            var marca = $('.select2-marca').select2("val");
+            var departamento = $('.select2-departamento').select2("val");
+            var categoria = $('.select2-categoria').select2("val");
+            var presentacion = $('.select2-presentacion').select2("val");
+            var productos = $('.select2-productos').select2("val");
+            var fechaS = $('#rangoFecha').data('daterangepicker').startDate.format('YYYY-MM-DD');
+            var fechaF = $('#rangoFecha').data('daterangepicker').endDate.format('YYYY-MM-DD');
+            var datos = {
+                marca: marca,
+                departamento: departamento,
+                categoria: categoria,
+                presentacion: presentacion,
+                productos: productos,
+                fechaS: fechaS,
+                fechaF: fechaF,
+                accion: 'xls'
+            };
+            var jqxhr = $.post( "{{ url('/ajax/busqueda') }}", datos, function(data) {
+                $("#hrefExcel").attr('href', '{{url('/download/')}}/'+data.filename+'.xls');
+            })
+                    .done(function() {
+                    })
+                    .fail(function() {
+                        alert( "Ocurrio un error mientras se procesaba la información" );
+                    })
+                    .always(function() {
+
+                    });
+            jqxhr.always(function() {
+
+            });
         });
         function datosJson (accion) {
             var marca = $('.select2-marca').select2("val");
