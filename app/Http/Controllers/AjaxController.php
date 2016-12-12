@@ -247,28 +247,58 @@ class AjaxController extends Controller
             if($accion == 'marca'){
                 $queryConcentradov->groupBy('division')
                 ->join('catxdivision', 'concentradov.division', '=', 'catxdivision.id')
-                ->select('catxdivision.id as id', 'catxdivision.nombre as nombre', DB::raw('count(*) as count'));
+                ->select('catxdivision.id as id', 'catxdivision.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
             }
             if($accion == 'departamento'){
                 $queryConcentradov->groupBy('categoria')
                     ->join('catxcategoria', 'concentradov.categoria', '=', 'catxcategoria.id')
-                    ->select('catxcategoria.id as id', 'catxcategoria.nombre as nombre', DB::raw('count(*) as count'));
+                    ->select('catxcategoria.id as id', 'catxcategoria.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
             }
             if($accion == 'categoria'){
                 $queryConcentradov->groupBy('subcategoria')
                     ->join('catxsubcategoria', 'concentradov.subcategoria', '=', 'catxsubcategoria.id')
-                    ->select('catxsubcategoria.id as id', 'catxsubcategoria.nombre as nombre', DB::raw('count(*) as count'));
+                    ->select('catxsubcategoria.id as id', 'catxsubcategoria.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
             }
             if($accion == 'presentacion'){
                 $queryConcentradov->groupBy('modelo')
                     ->join('catxmodelo', 'concentradov.modelo', '=', 'catxmodelo.id')
-                    ->select('catxmodelo.id as id', 'catxmodelo.nombre as nombre', DB::raw('count(*) as count'));
+                    ->select('catxmodelo.id as id', 'catxmodelo.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
             }
             if($accion == 'producto'){
                 $queryConcentradov
                     ->groupBy('idProducto')
                     ->join('catproductos', 'concentradov.idProducto', '=', 'catproductos.id')
-                    ->select('catproductos.id as id', 'catproductos.nombre as nombre', DB::raw('count(*) as count'));
+                    ->select('catproductos.id as id', 'catproductos.nombre as nombre', DB::raw('sum(truncate(ventasImporte,2)) as count'));
+            }
+            if($accion == 'topproductos'){
+                $queryConcentradov
+                    ->groupBy('idProducto')
+                    ->orderBy('count', 'desc')
+                    ->limit(20)
+                    ->join('catproductos', 'concentradov.idProducto', '=', 'catproductos.id')
+                    ->select('catproductos.id as id', 'catproductos.nombre as nombre', DB::raw('sum(truncate(ventasImporte,2)) as count'));
+            }
+            if($accion == 'toptiendas'){
+                $queryConcentradov
+                    ->groupBy('idTienda')
+                    ->orderBy('count', 'desc')
+                    ->limit(20)
+                    ->join('cattiendas', 'concentradov.idTienda', '=', 'cattiendas.id')
+                    ->select('cattiendas.id as id', 'cattiendas.sucursal as nombre', DB::raw('sum(truncate(ventasImporte,2)) as count'));
+            }
+            if($accion == 'inventarioexistencias'){
+                $queryConcentradov
+                    ->groupBy('idProducto')
+                    ->orderBy('count', 'desc')
+                    ->join('catproductos', 'concentradov.idProducto', '=', 'catproductos.id')
+                    ->select('catproductos.id as id', 'catproductos.nombre as nombre', DB::raw('sum(existenciasUnidades) as count'));
+            }
+            if($accion == 'inventarioimporte'){
+                $queryConcentradov
+                    ->groupBy('idProducto')
+                    ->orderBy('count', 'desc')
+                    ->join('catproductos', 'concentradov.idProducto', '=', 'catproductos.id')
+                    ->select('catproductos.id as id', 'catproductos.nombre as nombre', DB::raw('sum(existenciasImporte) as count'));
             }
         $queryConcentradov->whereBetween('fecha', [$request->fechaS, $request->fechaF]);
         if($accion == 'xls'){

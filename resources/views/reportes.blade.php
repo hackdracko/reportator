@@ -1,6 +1,12 @@
 @extends('layouts.master')
 
 @section('content')
+    <style>
+        .amcharts-export-menu-top-right {
+            top: 10px;
+            right: 0;
+        }
+    </style>
     <div class="page-bar">
         <ul class="page-breadcrumb">
             <li>
@@ -24,14 +30,17 @@
             <div class="portlet-body">
                 <ul class="nav nav-pills">
                     <li class="active">
-                        <a href="#tab_graficas" data-toggle="tab"> Graficas </a>
+                        <a href="#tab_ventas" data-toggle="tab"> Información por Ventas </a>
                     </li>
                     <li>
-                        <a href="#tab_documentos" data-toggle="tab"> Documentos </a>
+                        <a href="#tab_inventario" data-toggle="tab"> Información por Inventario </a>
+                    </li>
+                    <li>
+                        <a href="#tab_documentos" data-toggle="tab"> Exportar Información </a>
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane fade active in" id="tab_graficas">
+                    <div class="tab-pane fade active in" id="tab_ventas">
                         <div class="portlet box blue col-md-6">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -116,6 +125,74 @@
                                 <div id="chartdiv_producto" style="width: 100%; height: 400px; display:none"></div>
                             </div>
                         </div>
+
+                        <div class="portlet box blue col-md-12">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i> Top 20 productos más vendidos </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                                    <a href="#" class="reload" data-original-title="" title=""> </a>
+                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_topproductos" style="display:none"></div>
+                                <div id="chartdiv_topproductos" style="width: 100%; height: 400px; display:none"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-12">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i> Top 20 tiendas </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                                    <a href="#" class="reload" data-original-title="" title=""> </a>
+                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_toptiendas" style="display:none"></div>
+                                <div id="chartdiv_toptiendas" style="width: 100%; height: 400px; display:none"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab_inventario">
+                        <div class="portlet box blue col-md-12">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i> Inventario Existencias </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                                    <a href="#" class="reload" data-original-title="" title=""> </a>
+                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_inventarioexistencias" style="display:none"></div>
+                                <div id="chartdiv_inventarioexistencias" style="width: 100%; height: 400px; display:none"></div>
+                            </div>
+                        </div>
+                        <div class="portlet box blue col-md-12">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i> Inventario Importe </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                                    <a href="#" class="reload" data-original-title="" title=""> </a>
+                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_inventarioimporte" style="display:none"></div>
+                                <div id="chartdiv_inventarioimporte" style="width: 100%; height: 400px; display:none"></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="tab_documentos">
                         <div class="col-md-3 col-sm-3 col-xs-3">
@@ -125,13 +202,13 @@
                             </div>
                             <div class="text-center"><a id="hrefExcel" href="">Descargar</a></div>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3">
+                        <!-- <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="color-demo export-pdf" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
                                 <div class="color-view bg-blue bg-font-blue bold uppercase"><img src="https://lh4.ggpht.com/u9ofV9e2diX3giScuXT46B4A0vxFw8tj5NzHQJVAqAKwL5b_o8CHnO-qiZZIZYHlTg=w300-rw" height="100px" width="100px"></div>
                                 <div class="color-info bg-white c-font-14 sbold"> Exportar a Pdf </div>
                             </div>
                             <div class="text-center"><a id="hrefPdf" href="">Descargar</a></div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -148,6 +225,10 @@
             $("#chartdiv_categoria").hide();
             $("#chartdiv_presentacion").hide();
             $("#chartdiv_producto").hide();
+            $("#chartdiv_topproductos").hide();
+            $("#chartdiv_toptiendas").hide();
+            $("#chartdiv_inventarioexistencias").hide();
+            $("#chartdiv_inventarioimporte").hide();
 
             $("#modalFiltros").fadeOut(2000);
             setTimeout(function(){ $('#modalFiltros').modal('hide'); }, 2000);
@@ -156,11 +237,19 @@
             $("#div_categoria").empty();
             $("#div_presentacion").empty();
             $("#div_producto").empty();
-            datosJson("marca");
-            datosJson("departamento");
-            datosJson("categoria");
-            datosJson("presentacion");
-            datosJson("producto");
+            $("#div_topproductos").empty();
+            $("#div_toptiendas").empty();
+            $("#div_inventarioexistencias").empty();
+            $("#div_inventarioimporte").empty();
+            datosJson("marca", 1);
+            datosJson("departamento", 1);
+            datosJson("categoria", 1);
+            datosJson("presentacion", 1);
+            datosJson("producto", 2);
+            datosJson("topproductos", 2);
+            datosJson("toptiendas", 2);
+            datosJson("inventarioexistencias", 2);
+            datosJson("inventarioimporte", 2);
 
         });
         $('.export-excel').on('click',function(e){
@@ -196,7 +285,7 @@
 
             });
         });
-        function datosJson (accion) {
+        function datosJson (accion, chart) {
             var marca = $('.select2-marca').select2("val");
             var departamento = $('.select2-departamento').select2("val");
             var categoria = $('.select2-categoria').select2("val");
@@ -216,7 +305,12 @@
             };
             spinner(accion);
             var jqxhr = $.post( "{{ url('/ajax/busqueda') }}", datos, function(data) {
-                chartMarca(accion, data);
+                if(chart == 1){
+                    chartPie(accion, data);
+                }
+                if(chart == 2){
+                    chartSerial(accion, data);
+                }
                 $("#spinner_"+accion).hide();
                 $("#chartdiv_"+accion).show();
             })
@@ -234,7 +328,7 @@
 
             });
         }
-        function chartMarca(div, datos) {
+        function chartPie(div, datos) {
             var chart = AmCharts.makeChart("chartdiv_"+div,{
                 "type"    : "pie",
                 "titleField"  : "nombre",
@@ -242,148 +336,46 @@
                 "dataProvider"  : datos.resultado
             });
         }
-        function chartTest(datos) {
-            var chart2;
-
-            var chartData2 = [
-                {
-                    "country": "USA",
-                    "visits": 4025,
-                    "color": "#FF0F00"
+        function chartSerial(div, datos) {
+            var chart = AmCharts.makeChart("chartdiv_"+div,{
+                "type"    : "serial",
+                "marginRight": 70,
+                "pathToImages": "http://cdn.amcharts.com/lib/3/images/", // required for grips
+                "libs": { "path": "../libs/" },
+                "chartScrollbar": {
+                    "updateOnReleaseOnly": true
                 },
-                {
-                    "country": "China",
-                    "visits": 1882,
-                    "color": "#FF6600"
+                "dataProvider"  : datos.resultado,
+                "valueAxes": [{
+                    "axisAlpha": 0,
+                    "position": "left",
+                    "title": "Visitors from country"
+                }],
+                "startDuration": 1,
+                "graphs": [{
+                    "balloonText": "<b>[[category]]: [[value]]</b>",
+                    "fillColorsField": "color",
+                    "fillAlphas": 0.9,
+                    "lineAlpha": 0.2,
+                    "type": "column",
+                    "valueField": "count"
+                }],
+                "chartCursor": {
+                    "categoryBalloonEnabled": false,
+                    "cursorAlpha": 0,
+                    "zoomable": false
                 },
-                {
-                    "country": "Japan",
-                    "visits": 1809,
-                    "color": "#FF9E01"
+                "categoryField": "nombre",
+                "categoryAxis": {
+                    "gridPosition": "start",
+                    "labelRotation": 45
                 },
-                {
-                    "country": "Germany",
-                    "visits": 1322,
-                    "color": "#FCD202"
-                },
-                {
-                    "country": "UK",
-                    "visits": 1122,
-                    "color": "#F8FF01"
-                },
-                {
-                    "country": "France",
-                    "visits": 1114,
-                    "color": "#B0DE09"
-                },
-                {
-                    "country": "India",
-                    "visits": 984,
-                    "color": "#04D215"
-                },
-                {
-                    "country": "Spain",
-                    "visits": 711,
-                    "color": "#0D8ECF"
-                },
-                {
-                    "country": "Netherlands",
-                    "visits": 665,
-                    "color": "#0D52D1"
-                },
-                {
-                    "country": "Russia",
-                    "visits": 580,
-                    "color": "#2A0CD0"
-                },
-                {
-                    "country": "South Korea",
-                    "visits": 443,
-                    "color": "#8A0CCF"
-                },
-                {
-                    "country": "Canada",
-                    "visits": 441,
-                    "color": "#CD0D74"
-                },
-                {
-                    "country": "Brazil",
-                    "visits": 395,
-                    "color": "#754DEB"
-                },
-                {
-                    "country": "Italy",
-                    "visits": 386,
-                    "color": "#DDDDDD"
-                },
-                {
-                    "country": "Australia",
-                    "visits": 384,
-                    "color": "#999999"
-                },
-                {
-                    "country": "Taiwan",
-                    "visits": 338,
-                    "color": "#333333"
-                },
-                {
-                    "country": "Poland",
-                    "visits": 328,
-                    "color": "#000000"
+                "export": {
+                    "enabled": true
                 }
-            ];
-
-
-            AmCharts.ready(function () {
-                // SERIAL CHART
-                chart2 = new AmCharts.AmSerialChart();
-                chart2.dataProvider = chartData2;
-                chart2.categoryField = "country";
-                // the following two lines makes chart 3D
-                chart2.depth3D = 20;
-                chart2.angle = 30;
-
-                // AXES
-                // category
-                var categoryAxis = chart2.categoryAxis;
-                categoryAxis.labelRotation = 90;
-                categoryAxis.dashLength = 5;
-                categoryAxis.gridPosition = "start";
-
-                // value
-                var valueAxis = new AmCharts.ValueAxis();
-                valueAxis.title = "Visitors";
-                valueAxis.dashLength = 5;
-                chart2.addValueAxis(valueAxis);
-
-                // GRAPH
-                var graph = new AmCharts.AmGraph();
-                graph.valueField = "visits";
-                graph.colorField = "color";
-                graph.balloonText = "<span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>";
-                graph.type = "column";
-                graph.lineAlpha = 0;
-                graph.fillAlphas = 1;
-                chart2.addGraph(graph);
-
-                // CURSOR
-                var chartCursor2 = new AmCharts.ChartCursor();
-                chartCursor2.cursorAlpha = 0;
-                chartCursor2.zoomable = false;
-                chartCursor2.categoryBalloonEnabled = false;
-                chart2.addChartCursor(chartCursor2);
-
-                chart2.creditsPosition = "top-right";
-
-
-                // WRITE
-                chart2.write("chartdiv2");
             });
         }
     </script>
-    </head>
-
-    <body>
-    <div id="chartdiv" style="width: 100%; height: 400px;"></div>
-    </body>
+    <script src="//cdn.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link  type="text/css" href="//cdn.amcharts.com/lib/3/plugins/export/export.css" rel="stylesheet">
 @endsection
