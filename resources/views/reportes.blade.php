@@ -218,6 +218,9 @@
 @endsection
 @section('javascript')
     <script>
+        $(function(){
+            $('#modalFiltros').modal('show');
+        });
         $('#btnbusqueda').on('click',function(e){
             e.preventDefault();
             $("#chartdiv_marca").hide();
@@ -333,7 +336,14 @@
                 "type"    : "pie",
                 "titleField"  : "nombre",
                 "valueField"  : "count",
-                "dataProvider"  : datos.resultado
+                "dataProvider"  : datos.resultado,
+                "export": {
+                    "enabled": true,
+                    "libs": {
+                        "path": "../assets/global/plugins/amcharts/amcharts/export/libs/"
+                    }
+                }
+
             });
         }
         function chartSerial(div, datos) {
@@ -341,15 +351,13 @@
                 "type"    : "serial",
                 "marginRight": 70,
                 "pathToImages": "http://cdn.amcharts.com/lib/3/images/", // required for grips
-                "libs": { "path": "../libs/" },
                 "chartScrollbar": {
                     "updateOnReleaseOnly": true
                 },
                 "dataProvider"  : datos.resultado,
                 "valueAxes": [{
                     "axisAlpha": 0,
-                    "position": "left",
-                    "title": "Visitors from country"
+                    "position": "left"
                 }],
                 "startDuration": 1,
                 "graphs": [{
@@ -371,7 +379,10 @@
                     "labelRotation": 45
                 },
                 "export": {
-                    "enabled": true
+                    "enabled": true,
+                    "libs": {
+                        "path": "../assets/global/plugins/amcharts/amcharts/export/libs/"
+                    }
                 }
             });
         }

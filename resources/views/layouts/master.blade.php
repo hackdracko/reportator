@@ -220,7 +220,7 @@
         <div class="page-header-inner ">
             <!-- BEGIN LOGO -->
             <div class="page-logo">
-                <a href="index-2.html">
+                <a href="{{url('/')}}">
                     <img src="{{ asset('../assets/layouts/layout/img/logo.png')}}" alt="logo" class="logo-default" /> </a>
                 <div class="menu-toggler sidebar-toggler">
                     <span></span>
@@ -239,7 +239,7 @@
                     <!-- DOC: Apply "dropdown-dark" class after "dropdown-extended" to change the dropdown styte -->
                     <!-- DOC: Apply "dropdown-hoverable" class after below "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
                     <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
-                    <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                    <!--<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <i class="icon-bell"></i>
                             <span class="badge badge-default"> 7 </span>
@@ -336,11 +336,11 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                     <!-- END NOTIFICATION DROPDOWN -->
                     <!-- BEGIN INBOX DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                    <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                    <!--<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <i class="icon-envelope-open"></i>
                             <span class="badge badge-default"> 4 </span>
@@ -411,11 +411,11 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                     <!-- END INBOX DROPDOWN -->
                     <!-- BEGIN TODO DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                    <li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
+                    <!--<li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <i class="icon-calendar"></i>
                             <span class="badge badge-default"> 3 </span>
@@ -522,47 +522,15 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                     <!-- END TODO DROPDOWN -->
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <img alt="" class="img-circle" src="../assets/layouts/layout/img/avatar3_small.jpg" />
-                            <span class="username username-hide-on-mobile"> Nick </span>
-                            <i class="fa fa-angle-down"></i>
+                            <img alt="" class="img-circle" src="https://pbs.twimg.com/profile_images/748905631713603584/9l8RG7in.jpg" />
+                            <span class="username username-hide-on-mobile"> Evolve </span>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-default">
-                            <li>
-                                <a href="page_user_profile_1.html">
-                                    <i class="icon-user"></i> My Profile </a>
-                            </li>
-                            <li>
-                                <a href="app_calendar.html">
-                                    <i class="icon-calendar"></i> My Calendar </a>
-                            </li>
-                            <li>
-                                <a href="app_inbox.html">
-                                    <i class="icon-envelope-open"></i> My Inbox
-                                    <span class="badge badge-danger"> 3 </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="app_todo.html">
-                                    <i class="icon-rocket"></i> My Tasks
-                                    <span class="badge badge-success"> 7 </span>
-                                </a>
-                            </li>
-                            <li class="divider"> </li>
-                            <li>
-                                <a href="page_user_lock_1.html">
-                                    <i class="icon-lock"></i> Lock Screen </a>
-                            </li>
-                            <li>
-                                <a href="page_user_login_1.html">
-                                    <i class="icon-key"></i> Log Out </a>
-                            </li>
-                        </ul>
                     </li>
                     <!-- END USER LOGIN DROPDOWN -->
                     <!-- BEGIN QUICK SIDEBAR TOGGLER -->
@@ -606,15 +574,17 @@
                             <span></span>
                         </div>
                     </li>
+                    <li class="heading">
+                        <h3 class="uppercase">Reportes</h3>
+                    </li>
                     <li class="nav-item start {{ Request::is('reportes') ? 'active open' : '' }}">
                         <a href="{{ url('/reportes') }}" class="nav-link nav-toggle">
                             <i class="icon-home"></i>
                             <span class="title">Reporteador</span>
                             <span class="selected"></span>
-                            <span class="arrow open"></span>
                         </a>
                     </li>
-                    <li class="heading">
+                    <!--<li class="heading">
                         <h3 class="uppercase">Administracion</h3>
                     </li>
                     <li class="nav-item  ">
@@ -623,7 +593,7 @@
                             <span class="title">Catalogos</span>
                             <span class="arrow"></span>
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
                 <!-- END SIDEBAR MENU -->
                 <!-- END SIDEBAR MENU -->
@@ -654,10 +624,10 @@
                                     </h1>
                                     <div class="row">
                                         <div id="filtrosGenerales">
-                                            <div class="col-md-offset-1 col-md-2 col-sm-2 col-xs-6 filtroPedidos">
+                                            <div class="col-md-offset-3 col-md-2 col-sm-2 col-xs-6 filtroPedidos">
                                                 <div class="color-demo" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
                                                     <div class="color-view bg-red-flamingo bg-font-red-flamingo bold uppercase"><i class="icon-book-open"></i></div>
-                                                    <div class="color-info bg-white c-font-14 sbold"> Pedidos </div>
+                                                    <div class="color-info bg-white c-font-14 sbold"> Productos </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-2 col-sm-2 col-xs-6 filtroClientes">
@@ -673,7 +643,7 @@
                                                     <div class="color-info bg-white c-font-14 sbold"> Fecha </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                            <!--<div class="col-md-2 col-sm-2 col-xs-6">
                                                 <div class="color-demo" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
                                                     <div class="color-view bg-red-pink bg-font-red-pink bold uppercase"><i class="icon-map"></i></div>
                                                     <div class="color-info bg-white c-font-14 sbold"> Estados </div>
@@ -684,7 +654,7 @@
                                                     <div class="color-view bg-green-steel bg-font-green-steel bold uppercase"><i class="icon-user-following"></i></div>
                                                     <div class="color-info bg-white c-font-14 sbold"> Equipos </div>
                                                 </div>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <div class="clearfix"></div>
                                         <div class="col-md-12 contenedorPedidos">

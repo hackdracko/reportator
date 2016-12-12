@@ -288,17 +288,17 @@ class AjaxController extends Controller
             }
             if($accion == 'inventarioexistencias'){
                 $queryConcentradov
-                    ->groupBy('idProducto')
+                    ->groupBy('idTienda')
                     ->orderBy('count', 'desc')
                     ->join('catproductos', 'concentradov.idProducto', '=', 'catproductos.id')
-                    ->select('catproductos.id as id', 'catproductos.nombre as nombre', DB::raw('sum(existenciasUnidades) as count'));
+                    ->select('catproductos.id as id', 'catproductos.nombre as nombre', DB::raw('existenciasUnidades as count'));
             }
             if($accion == 'inventarioimporte'){
                 $queryConcentradov
-                    ->groupBy('idProducto')
+                    ->groupBy('idTienda')
                     ->orderBy('count', 'desc')
                     ->join('catproductos', 'concentradov.idProducto', '=', 'catproductos.id')
-                    ->select('catproductos.id as id', 'catproductos.nombre as nombre', DB::raw('sum(existenciasImporte) as count'));
+                    ->select('catproductos.id as id', 'catproductos.nombre as nombre', DB::raw('existenciasImporte as count'));
             }
         $queryConcentradov->whereBetween('fecha', [$request->fechaS, $request->fechaF]);
         if($accion == 'xls'){
