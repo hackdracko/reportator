@@ -333,7 +333,6 @@ class AjaxController extends Controller
             $queryConcentradov
                 ->select('*')
                 ->whereBetween('fecha', [$request->fechaS, $request->fechaF]);
-            dd($queryConcentradov);
             $data = collect($queryConcentradov->get())->map(function($x){ return (array) $x; })->toArray();
             $string = str_random(10);
             $nameFile = "Reporte_".$string;
