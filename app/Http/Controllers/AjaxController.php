@@ -300,6 +300,34 @@ class AjaxController extends Controller
                     ->join('catproductos', 'concentradov.idProducto', '=', 'catproductos.id')
                     ->select('catproductos.id as id', 'catproductos.nombre as nombre', DB::raw('existenciasImporte as count'));
             }
+            if($accion == 'grupo'){
+                $queryConcentradov
+                    ->groupBy('catxgrupo.id')
+                    ->orderBy('count', 'desc')
+                    ->join('catxgrupo', 'concentradov.grupo', '=', 'catxgrupo.id')
+                    ->select('catxgrupo.id as id', 'catxgrupo.nombre as nombre', DB::raw('sum(truncate(ventasImporte,2)) as count'));
+            }
+            if($accion == 'formato'){
+                $queryConcentradov
+                    ->groupBy('catxformato.id')
+                    ->orderBy('count', 'desc')
+                    ->join('catxformato', 'concentradov.formato', '=', 'catxformato.id')
+                    ->select('catxformato.id as id', 'catxformato.nombre as nombre', DB::raw('sum(truncate(ventasImporte,2)) as count'));
+            }
+            if($accion == 'cadena'){
+                $queryConcentradov
+                    ->groupBy('catxcadena.id')
+                    ->orderBy('count', 'desc')
+                    ->join('catxcadena', 'concentradov.formato', '=', 'catxcadena.id')
+                    ->select('catxcadena.id as id', 'catxcadena.nombre as nombre', DB::raw('sum(truncate(ventasImporte,2)) as count'));
+            }
+            if($accion == 'sucursal'){
+                $queryConcentradov
+                    ->groupBy('cattiendas.sucursal')
+                    ->orderBy('count', 'desc')
+                    ->join('cattiendas', 'concentradov.idTienda', '=', 'cattiendas.id')
+                    ->select('cattiendas.id as id', 'cattiendas.sucursal as nombre', DB::raw('sum(truncate(ventasImporte,2)) as count'));
+            }
         $queryConcentradov->whereBetween('fecha', [$request->fechaS, $request->fechaF]);
         if($accion == 'xls'){
             $queryConcentradov

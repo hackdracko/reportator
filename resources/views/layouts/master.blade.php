@@ -624,7 +624,13 @@
                                     </h1>
                                     <div class="row">
                                         <div id="filtrosGenerales">
-                                            <div class="col-md-offset-3 col-md-2 col-sm-2 col-xs-6 filtroPedidos">
+                                            <div class="col-md-offset-3 col-md-2 col-sm-2 col-xs-6 filtroFecha">
+                                                <div class="color-demo" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
+                                                    <div class="color-view bg-yellow-soft bg-font-yellow-soft bold uppercase"><i class="icon-calendar"></i></div>
+                                                    <div class="color-info bg-white c-font-14 sbold"> Fecha </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6 filtroPedidos">
                                                 <div class="color-demo" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
                                                     <div class="color-view bg-red-flamingo bg-font-red-flamingo bold uppercase"><i class="icon-book-open"></i></div>
                                                     <div class="color-info bg-white c-font-14 sbold"> Productos </div>
@@ -635,12 +641,6 @@
                                                     <div class="color-view bg-blue bg-font-blue bold uppercase"><i class="icon-user"></i></div>
                                                     <div class="color-info bg-white c-font-14 sbold"> Clientes </div>
 
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2 col-sm-2 col-xs-6 filtroFecha">
-                                                <div class="color-demo" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
-                                                    <div class="color-view bg-yellow-soft bg-font-yellow-soft bold uppercase"><i class="icon-calendar"></i></div>
-                                                    <div class="color-info bg-white c-font-14 sbold"> Fecha </div>
                                                 </div>
                                             </div>
                                             <!--<div class="col-md-2 col-sm-2 col-xs-6">
@@ -657,7 +657,32 @@
                                             </div>-->
                                         </div>
                                         <div class="clearfix"></div>
-                                        <div class="col-md-12 contenedorPedidos">
+                                        <div class="col-md-12 contenedorFecha">
+                                            <div class="portlet box yellow-soft ">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        <i class="fa fa-gift"></i> Filtro por Fecha</div>
+                                                    <div class="tools">
+                                                        <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                                        <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                                                        <a href="#" class="reload" data-original-title="" title=""> </a>
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body form">
+                                                    <div class="form-body">
+                                                        <div class="col-md-12">
+                                                            <label>Rango de Fecha</label>
+                                                            <input type="text" name="rangoFecha" id="rangoFecha" class="daterange" size="25" value="{{date('d-m-Y')}}" />
+                                                            <div id="containerRange"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 contenedorPedidos" style="display:none;">
                                             <div class="portlet box blue-dark ">
                                                 <div class="portlet-title">
                                                     <div class="caption">
@@ -747,31 +772,6 @@
 
                                                         <div class="clearfix"></div>
 
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12 contenedorFecha" style="display:none;">
-                                            <div class="portlet box yellow-soft ">
-                                                <div class="portlet-title">
-                                                    <div class="caption">
-                                                        <i class="fa fa-gift"></i> Filtro por Fecha</div>
-                                                    <div class="tools">
-                                                        <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                                        <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                                        <a href="#" class="reload" data-original-title="" title=""> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="portlet-body form">
-                                                    <div class="form-body">
-                                                        <div class="col-md-12">
-                                                            <label>Rango de Fecha</label>
-                                                            <input type="text" name="rangoFecha" id="rangoFecha" class="daterange" size="25" value="{{date('d-m-Y')}}" />
-                                                            <div id="containerRange"></div>
-                                                        </div>
-                                                        <div class="clearfix"></div>
                                                     </div>
                                                     <div class="clearfix"></div>
                                                 </div>

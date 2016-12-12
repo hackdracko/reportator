@@ -36,6 +36,9 @@
                         <a href="#tab_inventario" data-toggle="tab"> Información por Inventario </a>
                     </li>
                     <li>
+                        <a href="#tab_cliente" data-toggle="tab"> Información por Cliente </a>
+                    </li>
+                    <li>
                         <a href="#tab_documentos" data-toggle="tab"> Exportar Información </a>
                     </li>
                 </ul>
@@ -194,13 +197,80 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="tab_cliente">
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i> Grupo </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                                    <a href="#" class="reload" data-original-title="" title=""> </a>
+                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_grupo" style="display:none"></div>
+                                <div id="chartdiv_grupo" style="width: 100%; height: 400px; display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i> Formato </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                                    <a href="#" class="reload" data-original-title="" title=""> </a>
+                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_formato" style="display:none"></div>
+                                <div id="chartdiv_formato" style="width: 100%; height: 400px; display:none;"></div>
+                            </div>
+                        </div>
+                        <div class="portlet box blue col-md-offset-3 col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i> Cadena </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                                    <a href="#" class="reload" data-original-title="" title=""> </a>
+                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_cadena" style="display:none"></div>
+                                <div id="chartdiv_cadena" style="width: 100%; height: 400px; display:none;"></div>
+                            </div>
+                        </div>
+                        <div class="portlet box blue col-md-12">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i> Sucursal </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                                    <a href="#" class="reload" data-original-title="" title=""> </a>
+                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_sucursal" style="display:none"></div>
+                                <div id="chartdiv_sucursal" style="width: 100%; height: 400px; display:none"></div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="tab-pane fade" id="tab_documentos">
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="color-demo export-excel" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
                                 <div class="color-view bg-blue bg-font-blue bold uppercase"><img src="https://lh3.ggpht.com/GkNfqm17WFuzaIR87_oz690ErF63hL08Ngj73QtDxyWlCOF80d2gWd2GHrPLJJ-YmHYS=w300-rw" height="100px" width="100px"></div>
                                 <div class="color-info bg-white c-font-14 sbold"> Exportar a Excel </div>
                             </div>
-                            <div class="text-center"><a id="hrefExcel" href="">Descargar</a></div>
+                            <div style="display:none;" id="linkExcel" class="text-center"><a id="hrefExcel" href="">Descargar</a></div>
                         </div>
                         <!-- <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="color-demo export-pdf" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
@@ -232,6 +302,10 @@
             $("#chartdiv_toptiendas").hide();
             $("#chartdiv_inventarioexistencias").hide();
             $("#chartdiv_inventarioimporte").hide();
+            $("#chartdiv_grupo").hide();
+            $("#chartdiv_formato").hide();
+            $("#chartdiv_cadena").hide();
+            $("#chartdiv_sucursal").hide();
 
             $("#modalFiltros").fadeOut(2000);
             setTimeout(function(){ $('#modalFiltros').modal('hide'); }, 2000);
@@ -244,6 +318,10 @@
             $("#div_toptiendas").empty();
             $("#div_inventarioexistencias").empty();
             $("#div_inventarioimporte").empty();
+            $("#div_grupo").empty();
+            $("#div_formato").empty();
+            $("#div_cadena").empty();
+            $("#div_sucursal").empty();
             datosJson("marca", 1);
             datosJson("departamento", 1);
             datosJson("categoria", 1);
@@ -253,9 +331,14 @@
             datosJson("toptiendas", 2);
             datosJson("inventarioexistencias", 2);
             datosJson("inventarioimporte", 2);
+            datosJson("grupo", 1);
+            datosJson("formato", 1);
+            datosJson("cadena", 1);
+            datosJson("sucursal", 2);
 
         });
         $('.export-excel').on('click',function(e){
+            $("#linkExcel").hide();
             var marca = $('.select2-marca').select2("val");
             var departamento = $('.select2-departamento').select2("val");
             var categoria = $('.select2-categoria').select2("val");
@@ -275,6 +358,7 @@
             };
             var jqxhr = $.post( "{{ url('/ajax/busqueda') }}", datos, function(data) {
                 $("#hrefExcel").attr('href', '{{url('/download/')}}/'+data.filename+'.xls');
+                $("#linkExcel").show();
             })
                     .done(function() {
                     })
