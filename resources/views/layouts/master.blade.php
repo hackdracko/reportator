@@ -221,7 +221,7 @@
             <!-- BEGIN LOGO -->
             <div class="page-logo">
                 <a href="{{url('/')}}">
-                    <img src="{{ asset('../assets/layouts/layout/img/logo.png')}}" alt="logo" class="logo-default" /> </a>
+                    <img src="{{ asset('../assets/layouts/layout/img/logo.png')}}" width="150px" alt="logo" class="logo-default" /> </a>
                 <div class="menu-toggler sidebar-toggler">
                     <span></span>
                 </div>
@@ -782,8 +782,8 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="modal-footer">
-                                    <input type="radio" id="tipoBusqueda" name="tipoBusqueda" value="0" checked="checked">Productos
-                                    <input type="radio" id="tipoBusqueda" name="tipoBusqueda" value="1">Clientes
+                                    <input type="radio" id="tipoBusqueda1" name="tipoBusqueda" value="0" checked>Productos
+                                    <input type="radio" id="tipoBusqueda2" name="tipoBusqueda" value="1">Clientes
                                     <button type="submit" name="btnbusqueda" id="btnbusqueda" class="btn green">Consultar</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                 </div>

@@ -1,7 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <!-- BEGIN LOGIN FORM -->
+    <form class="login-form" action="{{ url('/login') }}" method="post">
+        {{ csrf_field() }}
+        <div class="form-title">
+            <span class="form-title">Bienvenido.</span>
+            <span class="form-subtitle">Ingresa al Dashboard.</span>
+        </div>
+        <div class="alert alert-danger display-hide">
+            <button class="close" data-close="alert"></button>
+            <span> Enter any username and password. </span>
+        </div>
+        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+            <label class="control-label visible-ie8 visible-ie9">E-Mail Address</label>
+            <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Correo Electronico" name="email" /> </div>
+            @if ($errors->has('email'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
+        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+            <label class="control-label visible-ie8 visible-ie9">Password</label>
+            <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /> </div>
+            @if ($errors->has('password'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
+        <div class="form-actions">
+            <button type="submit" class="btn red btn-block uppercase">Login</button>
+        </div>
+    </form>
+    <!-- END LOGIN FORM -->
+
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -62,5 +96,5 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 @endsection

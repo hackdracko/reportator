@@ -298,7 +298,7 @@
                         <div class="portlet box blue col-md-12">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-bar-chart-o"></i> Top 20 productos más vendidos </div>
+                                    <i class="fa fa-bar-chart-o"></i> Top 20 productos más vendidos por Unidades</div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
                                     <div class="btn-group">
@@ -315,15 +315,15 @@
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <div id="spinner_topproductos" style="display:none"></div>
-                                <div class="contains-chart" id="chartdiv_topproductos" style="display:none"></div>
+                                <div id="spinner_topproductos_unidades" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_topproductos_unidades" style="display:none"></div>
                             </div>
                         </div>
 
                         <div class="portlet box blue col-md-12">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-bar-chart-o"></i> Top 20 tiendas </div>
+                                    <i class="fa fa-bar-chart-o"></i> Top 20 productos más vendidos por Importe</div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
                                     <div class="btn-group">
@@ -340,8 +340,58 @@
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <div id="spinner_toptiendas" style="display:none"></div>
-                                <div class="contains-chart" id="chartdiv_toptiendas" style="display:none"></div>
+                                <div id="spinner_topproductos_importe" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_topproductos_importe" style="display:none"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-12">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Top 20 tiendas por Unidades </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_toptiendas_unidades" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_toptiendas_unidades" style="display:none"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-12">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Top 20 tiendas por Importe </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_toptiendas_importe" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_toptiendas_importe" style="display:none"></div>
                             </div>
                         </div>
                     </div>
@@ -515,9 +565,6 @@
         </div>
     </div>
 
-
-    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
     <div class="clearfix"></div>
 @endsection
 @section('javascript')
@@ -559,6 +606,7 @@
         });
 
         $('#btnbusqueda').on('click',function(e){
+            var tipoBusqueda = $('input[name=tipoBusqueda]:checked').val();
             e.preventDefault();
             $("#chartdiv_marca_unidades").hide();
             $("#chartdiv_marca_importe").hide();
@@ -570,8 +618,10 @@
             $("#chartdiv_presentacion_importe").hide();
             $("#chartdiv_producto_unidades").hide();
             $("#chartdiv_producto_importe").hide();
-            $("#chartdiv_topproductos").hide();
-            $("#chartdiv_toptiendas").hide();
+            $("#chartdiv_topproductos_unidades").hide();
+            $("#chartdiv_topproductos_importe").hide();
+            $("#chartdiv_toptiendas_unidades").hide();
+            $("#chartdiv_toptiendas_importe").hide();
             $("#chartdiv_inventarioexistencias").hide();
             $("#chartdiv_inventarioimporte").hide();
             $("#chartdiv_grupo").hide();
@@ -608,8 +658,10 @@
             datosJson("presentacion_importe", 1);
             datosJson("producto_unidades", 2);
             datosJson("producto_importe", 2);
-            datosJson("topproductos", 2);
-            datosJson("toptiendas", 2);
+            datosJson("topproductos_unidades", 2);
+            datosJson("topproductos_importe", 2);
+            datosJson("toptiendas_unidades", 2);
+            datosJson("toptiendas_importe", 2);
             datosJson("inventarioexistencias", 2);
             datosJson("inventarioimporte", 2);
             datosJson("grupo", 1);
@@ -620,11 +672,17 @@
         });
         $('.export-excel').on('click',function(e){
             $("#linkExcel").hide();
+            var tipoBusqueda = $('input[name=tipoBusqueda]:checked').val();
             var marca = $('.select2-marca').select2("val");
             var departamento = $('.select2-departamento').select2("val");
             var categoria = $('.select2-categoria').select2("val");
             var presentacion = $('.select2-presentacion').select2("val");
             var productos = $('.select2-productos').select2("val");
+            var grupos = $('.select2-grupo').select2("val");
+            var formatos = $('.select2-formato').select2("val");
+            var cadenas = $('.select2-cadena').select2("val");
+            var sucursales = $('.select2-sucursal').select2("val");
+
             var fechaS = $('#rangoFecha').data('daterangepicker').startDate.format('YYYY-MM-DD');
             var fechaF = $('#rangoFecha').data('daterangepicker').endDate.format('YYYY-MM-DD');
             var datos = {
@@ -633,6 +691,10 @@
                 categoria: categoria,
                 presentacion: presentacion,
                 productos: productos,
+                grupos: grupos,
+                formatos: formatos,
+                cadenas: cadenas,
+                sucursales: sucursales,
                 fechaS: fechaS,
                 fechaF: fechaF,
                 accion: 'topproductos',
@@ -655,12 +717,16 @@
             });
         });
         function datosJson (accion, chart) {
-            var tipoBusqueda = $('#tipoBusqueda').val();
+            var tipoBusqueda = $('input[name=tipoBusqueda]:checked').val();
             var marca = $('.select2-marca').select2("val");
             var departamento = $('.select2-departamento').select2("val");
             var categoria = $('.select2-categoria').select2("val");
             var presentacion = $('.select2-presentacion').select2("val");
             var productos = $('.select2-productos').select2("val");
+            var grupos = $('.select2-grupo').select2("val");
+            var formatos = $('.select2-formato').select2("val");
+            var cadenas = $('.select2-cadena').select2("val");
+            var sucursales = $('.select2-sucursal').select2("val");
             var fechaS = $('#rangoFecha').data('daterangepicker').startDate.format('YYYY-MM-DD');
             var fechaF = $('#rangoFecha').data('daterangepicker').endDate.format('YYYY-MM-DD');
             var datos = {
@@ -670,6 +736,10 @@
                 categoria: categoria,
                 presentacion: presentacion,
                 productos: productos,
+                grupos: grupos,
+                formatos: formatos,
+                cadenas: cadenas,
+                sucursales: sucursales,
                 fechaS: fechaS,
                 fechaF: fechaF,
                 chart: chart,
