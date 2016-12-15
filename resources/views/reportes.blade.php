@@ -635,7 +635,8 @@
                 productos: productos,
                 fechaS: fechaS,
                 fechaF: fechaF,
-                accion: 'xls'
+                accion: 'topproductos',
+                type: 1
             };
             var jqxhr = $.post( "{{ url('/ajax/busqueda') }}", datos, function(data) {
                 $("#hrefExcel").attr('href', '{{url('/download/')}}/'+data.filename+'.xls');
