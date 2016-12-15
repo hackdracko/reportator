@@ -683,10 +683,10 @@
                                         </div>
 
                                         <div class="col-md-12 contenedorPedidos" style="display:none;">
-                                            <div class="portlet box blue-dark ">
+                                            <div class="portlet box red-flamingo">
                                                 <div class="portlet-title">
                                                     <div class="caption">
-                                                        <i class="fa fa-gift"></i> Filtro de consulta General</div>
+                                                        <i class="fa fa-gift"></i> Filtro por Productos</div>
                                                     <div class="tools">
                                                         <a href="#" class="collapse" data-original-title="" title=""> </a>
                                                         <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
@@ -782,6 +782,8 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="modal-footer">
+                                    <input type="radio" id="tipoBusqueda" name="tipoBusqueda" value="0" checked="checked">Productos
+                                    <input type="radio" id="tipoBusqueda" name="tipoBusqueda" value="1">Clientes
                                     <button type="submit" name="btnbusqueda" id="btnbusqueda" class="btn green">Consultar</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                 </div>
@@ -860,7 +862,8 @@
 <script src="{{ asset('../assets/global/plugins/morris/raphael-min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/counterup/jquery.waypoints.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/counterup/jquery.counterup.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/amcharts/amcharts/amcharts.js') }}" type="text/javascript"></script>
+
+<!--<script src="{{ asset('../assets/global/plugins/amcharts/amcharts/amcharts.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/amcharts/amcharts/serial.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/amcharts/amcharts/pie.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/amcharts/amcharts/radar.js') }}" type="text/javascript"></script>
@@ -869,7 +872,7 @@
 <script src="{{ asset('../assets/global/plugins/amcharts/amcharts/themes/chalk.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/amcharts/ammap/ammap.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/amcharts/ammap/maps/js/worldLow.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/amcharts/amstockcharts/amstock.js') }}" type="text/javascript"></script>
+<script src="{{ asset('../assets/global/plugins/amcharts/amstockcharts/amstock.js') }}" type="text/javascript"></script>-->
 <script src="{{ asset('../assets/global/plugins/fullcalendar/fullcalendar.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/horizontal-timeline/horizontal-timeline.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/flot/jquery.flot.min.js') }}" type="text/javascript"></script>

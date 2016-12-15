@@ -7,6 +7,7 @@
             right: 0;
         }
     </style>
+    <script src="http://files.codepedia.info/uploads/iScripts/html2canvas.js"></script>
     <div class="page-bar">
         <ul class="page-breadcrumb">
             <li>
@@ -47,119 +48,300 @@
                         <div class="portlet box blue col-md-6">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Marcas </div>
+                                    <i class="fa fa-bar-chart-o"></i> Marcas por Unidades </div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#" onClick="getExcel('marca_unidades')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <div id="spinner_marca" style="display:none"></div>
-                                <div id="chartdiv_marca" style="width: 100%; height: 400px; display:none;"></div>
+                                <div id="spinner_marca_unidades" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_marca_unidades" style="display:none;"></div>
                             </div>
                         </div>
 
                         <div class="portlet box blue col-md-6">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Departamentos </div>
+                                    <i class="fa fa-bar-chart-o"></i> Marcas por Importe </div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <div id="spinner_departamento" style="display:none"></div>
-                                <div id="chartdiv_departamento" style="width: 100%; height: 400px; display:none;"></div>
+                                <div id="spinner_marca_importe" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_marca_importe" style="display:none;"></div>
                             </div>
                         </div>
 
                         <div class="portlet box blue col-md-6">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Categorias </div>
+                                    <i class="fa fa-bar-chart-o"></i> Departamentos por Unidades </div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <div id="spinner_categoria" style="display:none"></div>
-                                <div id="chartdiv_categoria" style="width: 100%; height: 400px; display:none;"></div>
+                                <div id="spinner_departamento_unidades" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_departamento_unidades" style="display:none;"></div>
                             </div>
                         </div>
 
                         <div class="portlet box blue col-md-6">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Presentacion </div>
+                                    <i class="fa fa-bar-chart-o"></i> Departamentos por Importe </div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <div id="spinner_presentacion" style="display:none"></div>
-                                <div id="chartdiv_presentacion" style="width: 100%; height: 400px; display:none;"></div>
+                                <div id="spinner_departamento_importe" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_departamento_importe" style="display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Categorias por Unidades</div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_categoria_unidades" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_categoria_unidades" style="display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Categorias por Importe</div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_categoria_importe" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_categoria_importe" style="display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Presentación por Unidades </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_presentacion_unidades" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_presentacion_unidades" style="display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Presentación por Importe </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_presentacion_importe" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_presentacion_importe" style="display:none;"></div>
                             </div>
                         </div>
 
                         <div class="portlet box blue col-md-12">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Productos </div>
+                                    <i class="fa fa-bar-chart-o"></i> Productos por Unidades</div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <div id="spinner_producto" style="display:none"></div>
-                                <div id="chartdiv_producto" style="width: 100%; height: 400px; display:none"></div>
+                                <div id="spinner_producto_unidades" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_producto_unidades" style="display:none"></div>
                             </div>
                         </div>
 
                         <div class="portlet box blue col-md-12">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Top 20 productos más vendidos </div>
+                                    <i class="fa fa-bar-chart-o"></i> Productos por Importe</div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_producto_importe" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_producto_importe" style="display:none"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-12">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Top 20 productos más vendidos </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
                                 <div id="spinner_topproductos" style="display:none"></div>
-                                <div id="chartdiv_topproductos" style="width: 100%; height: 400px; display:none"></div>
+                                <div class="contains-chart" id="chartdiv_topproductos" style="display:none"></div>
                             </div>
                         </div>
 
                         <div class="portlet box blue col-md-12">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Top 20 tiendas </div>
+                                    <i class="fa fa-bar-chart-o"></i> Top 20 tiendas </div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
                                 <div id="spinner_toptiendas" style="display:none"></div>
-                                <div id="chartdiv_toptiendas" style="width: 100%; height: 400px; display:none"></div>
+                                <div class="contains-chart" id="chartdiv_toptiendas" style="display:none"></div>
                             </div>
                         </div>
                     </div>
@@ -167,33 +349,49 @@
                         <div class="portlet box blue col-md-12">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Inventario Existencias </div>
+                                    <i class="fa fa-bar-chart-o"></i> Inventario Existencias </div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
                                 <div id="spinner_inventarioexistencias" style="display:none"></div>
-                                <div id="chartdiv_inventarioexistencias" style="width: 100%; height: 400px; display:none"></div>
+                                <div class="contains-chart" id="chartdiv_inventarioexistencias" style="display:none"></div>
                             </div>
                         </div>
                         <div class="portlet box blue col-md-12">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Inventario Importe </div>
+                                    <i class="fa fa-bar-chart-o"></i> Inventario Importe </div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
                                 <div id="spinner_inventarioimporte" style="display:none"></div>
-                                <div id="chartdiv_inventarioimporte" style="width: 100%; height: 400px; display:none"></div>
+                                <div class="contains-chart" id="chartdiv_inventarioimporte" style="display:none"></div>
                             </div>
                         </div>
                     </div>
@@ -201,66 +399,98 @@
                         <div class="portlet box blue col-md-6">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Grupo </div>
+                                    <i class="fa fa-bar-chart-o"></i> Grupo </div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
                                 <div id="spinner_grupo" style="display:none"></div>
-                                <div id="chartdiv_grupo" style="width: 100%; height: 400px; display:none;"></div>
+                                <div class="contains-chart" id="chartdiv_grupo" style="display:none;"></div>
                             </div>
                         </div>
 
                         <div class="portlet box blue col-md-6">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Formato </div>
+                                    <i class="fa fa-bar-chart-o"></i> Formato </div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
                                 <div id="spinner_formato" style="display:none"></div>
-                                <div id="chartdiv_formato" style="width: 100%; height: 400px; display:none;"></div>
+                                <div class="contains-chart" id="chartdiv_formato" style="display:none;"></div>
                             </div>
                         </div>
                         <div class="portlet box blue col-md-offset-3 col-md-6">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Cadena </div>
+                                    <i class="fa fa-bar-chart-o"></i> Cadena </div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
                                 <div id="spinner_cadena" style="display:none"></div>
-                                <div id="chartdiv_cadena" style="width: 100%; height: 400px; display:none;"></div>
+                                <div class="contains-chart" id="chartdiv_cadena" style="display:none;"></div>
                             </div>
                         </div>
                         <div class="portlet box blue col-md-12">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i> Sucursal </div>
+                                    <i class="fa fa-bar-chart-o"></i> Sucursal </div>
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
-                                    <a href="#" class="reload" data-original-title="" title=""> </a>
-                                    <a href="#" class="remove" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="portlet-body form">
                                 <div id="spinner_sucursal" style="display:none"></div>
-                                <div id="chartdiv_sucursal" style="width: 100%; height: 400px; display:none"></div>
+                                <div class="contains-chart" id="chartdiv_sucursal" style="display:none"></div>
                             </div>
                         </div>
                     </div>
@@ -284,20 +514,62 @@
             </div>
         </div>
     </div>
+
+
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
     <div class="clearfix"></div>
 @endsection
 @section('javascript')
     <script>
         $(function(){
             $('#modalFiltros').modal('show');
+
+            $(document).on( 'shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+                // on tab selection event
+                $( ".contains-chart" ).each(function() { // target each element with the .contains-chart class
+                    var chart = $(this).highcharts(); // target the chart itself
+                    chart.reflow() // reflow that chart
+                });
+            })
+
+            Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function (color) {
+                return {
+                    radialGradient: {
+                        cx: 0.5,
+                        cy: 0.3,
+                        r: 0.7
+                    },
+                    stops: [
+                        [0, color],
+                        [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+                    ]
+                };
+            });
+            Highcharts.setOptions({
+                chart: {
+                    style: {
+                        fontFamily: 'serif'
+                    }
+                },
+                credits: {
+                    enabled: false
+                }
+            });
         });
+
         $('#btnbusqueda').on('click',function(e){
             e.preventDefault();
-            $("#chartdiv_marca").hide();
-            $("#chartdiv_departamento").hide();
-            $("#chartdiv_categoria").hide();
-            $("#chartdiv_presentacion").hide();
-            $("#chartdiv_producto").hide();
+            $("#chartdiv_marca_unidades").hide();
+            $("#chartdiv_marca_importe").hide();
+            $("#chartdiv_departamento_unidades").hide();
+            $("#chartdiv_departamento_importe").hide();
+            $("#chartdiv_categoria_unidades").hide();
+            $("#chartdiv_categoria_importe").hide();
+            $("#chartdiv_presentacion_unidades").hide();
+            $("#chartdiv_presentacion_importe").hide();
+            $("#chartdiv_producto_unidades").hide();
+            $("#chartdiv_producto_importe").hide();
             $("#chartdiv_topproductos").hide();
             $("#chartdiv_toptiendas").hide();
             $("#chartdiv_inventarioexistencias").hide();
@@ -309,10 +581,14 @@
 
             $("#modalFiltros").fadeOut(2000);
             setTimeout(function(){ $('#modalFiltros').modal('hide'); }, 2000);
-            $("#div_marca").empty();
-            $("#div_departamento").empty();
-            $("#div_categoria").empty();
-            $("#div_presentacion").empty();
+            /*$("#div_marca_unidades").empty();
+            $("#div_marca_importe").empty();
+            $("#div_departamento_unidades").empty();
+            $("#div_departamento_importe").empty();
+            $("#div_categoria_unidades").empty();
+            $("#div_categoria_importe").empty();
+            $("#div_presentacion_unidades").empty();
+            $("#div_presentacion_importe").empty();
             $("#div_producto").empty();
             $("#div_topproductos").empty();
             $("#div_toptiendas").empty();
@@ -321,12 +597,17 @@
             $("#div_grupo").empty();
             $("#div_formato").empty();
             $("#div_cadena").empty();
-            $("#div_sucursal").empty();
-            datosJson("marca", 1);
-            datosJson("departamento", 1);
-            datosJson("categoria", 1);
-            datosJson("presentacion", 1);
-            datosJson("producto", 2);
+            $("#div_sucursal").empty();*/
+            datosJson("marca_unidades", 1);
+            datosJson("marca_importe", 1);
+            datosJson("departamento_unidades", 1);
+            datosJson("departamento_importe", 1);
+            datosJson("categoria_unidades", 1);
+            datosJson("categoria_importe", 1);
+            datosJson("presentacion_unidades", 1);
+            datosJson("presentacion_importe", 1);
+            datosJson("producto_unidades", 2);
+            datosJson("producto_importe", 2);
             datosJson("topproductos", 2);
             datosJson("toptiendas", 2);
             datosJson("inventarioexistencias", 2);
@@ -373,6 +654,7 @@
             });
         });
         function datosJson (accion, chart) {
+            var tipoBusqueda = $('#tipoBusqueda').val();
             var marca = $('.select2-marca').select2("val");
             var departamento = $('.select2-departamento').select2("val");
             var categoria = $('.select2-categoria').select2("val");
@@ -381,6 +663,7 @@
             var fechaS = $('#rangoFecha').data('daterangepicker').startDate.format('YYYY-MM-DD');
             var fechaF = $('#rangoFecha').data('daterangepicker').endDate.format('YYYY-MM-DD');
             var datos = {
+                tipoBusqueda: tipoBusqueda,
                 marca: marca,
                 departamento: departamento,
                 categoria: categoria,
@@ -388,7 +671,9 @@
                 productos: productos,
                 fechaS: fechaS,
                 fechaF: fechaF,
-                accion: accion
+                chart: chart,
+                accion: accion,
+                type: 0
             };
             spinner(accion);
             var jqxhr = $.post( "{{ url('/ajax/busqueda') }}", datos, function(data) {
@@ -396,7 +681,7 @@
                     chartPie(accion, data);
                 }
                 if(chart == 2){
-                    chartSerial(accion, data);
+                    chartColumn(accion, data);
                 }
                 $("#spinner_"+accion).hide();
                 $("#chartdiv_"+accion).show();
@@ -416,61 +701,164 @@
             });
         }
         function chartPie(div, datos) {
-            var chart = AmCharts.makeChart("chartdiv_"+div,{
-                "type"    : "pie",
-                "titleField"  : "nombre",
-                "valueField"  : "count",
-                "dataProvider"  : datos.resultado,
-                "export": {
-                    "enabled": true,
-                    "libs": {
-                        "path": "../assets/global/plugins/amcharts/amcharts/export/libs/"
+            var fecha  = $("#rangoFecha").val();
+            // Build the chart
+            var initializeChart = function() {
+                Highcharts.chart("chartdiv_"+div, {
+                    chart: {
+                        type: 'pie'
+                    },
+                    title: {
+                        text: 'Información '+fecha
+                    },
+                    tooltip: {
+                        pointFormat: 'Porcentaje <b>{point.percentage:.1f}%</b> Cantidad <b> {point.total}'
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                /*format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                style: {
+                                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                },
+                                connectorColor: 'silver'*/
+                            }
+                        }
+                    },
+                    series: [{
+                        name: datos.categories,
+                        data: datos.data
+                    }]
+                });
+            }
+            window.setTimeout(initializeChart, 500);
+        }
+        function chartColumn(div, datos) {
+            var fecha  = $("#rangoFecha").val();
+            var initializeChart = function() {
+                Highcharts.chart("chartdiv_" + div, {
+                    chart: {
+                        type: 'column',
+                        events: {
+                            load: function () {
+                                $(window).resize();
+                            }
+                        }
+                    },
+                    title: {
+                        text: 'Información '+fecha
+                    },
+
+                    subtitle: {
+                        text: ''
+                    },
+
+                    xAxis: {
+                        max: 19,
+                        categories: datos.categories,
+                        scrollbar: {
+                            enabled: true,
+                            barBackgroundColor: 'gray',
+                            barBorderRadius: 7,
+                            barBorderWidth: 0,
+                            buttonBackgroundColor: 'gray',
+                            buttonBorderWidth: 0,
+                            buttonArrowColor: 'yellow',
+                            buttonBorderRadius: 7,
+                            rifleColor: 'yellow',
+                            trackBackgroundColor: 'white',
+                            trackBorderWidth: 1,
+                            trackBorderColor: 'silver',
+                            trackBorderRadius: 7
+                        }
+                    },
+                    series: [{
+                        pointPadding: 0,
+                        colorByPoint: true,
+                        data: datos.data,
+                        showInLegend: false
+                    }],
+                    responsive: {
+                        rules: [{
+                            condition: {
+                                maxWidth: 500
+                            },
+                            chartOptions: {
+                                legend: {
+                                    align: 'center',
+                                    verticalAlign: 'bottom',
+                                    layout: 'horizontal'
+                                },
+                                yAxis: {
+                                    labels: {
+                                        align: 'left',
+                                        x: 0,
+                                        y: -5
+                                    },
+                                    title: {
+                                        text: null
+                                    }
+                                },
+                                subtitle: {
+                                    text: null
+                                }
+                            }
+                        }]
                     }
+
+                });
+            }
+            window.setTimeout(initializeChart, 200);
+        }
+        function getPng(download, div){
+            html2canvas($("#"+div) , {
+                onrendered: function (canvas) {
+                    dataURL = canvas.toDataURL("image/png");
+                    var newData = dataURL.replace(/^data:image\/png/, "data:application/octet-stream");
+                    $("#"+download).attr("download", "image.png").attr("href", newData);
                 }
+            });
+        }
+        function getExcel(accion){
+            var marca = $('.select2-marca').select2("val");
+            var departamento = $('.select2-departamento').select2("val");
+            var categoria = $('.select2-categoria').select2("val");
+            var presentacion = $('.select2-presentacion').select2("val");
+            var productos = $('.select2-productos').select2("val");
+            var fechaS = $('#rangoFecha').data('daterangepicker').startDate.format('YYYY-MM-DD');
+            var fechaF = $('#rangoFecha').data('daterangepicker').endDate.format('YYYY-MM-DD');
+            var datos = {
+                marca: marca,
+                departamento: departamento,
+                categoria: categoria,
+                presentacion: presentacion,
+                productos: productos,
+                fechaS: fechaS,
+                fechaF: fechaF,
+                accion: accion,
+                type: 1
+            };
+            var jqxhr = $.post( "{{ url('/ajax/busqueda') }}", datos, function(data) {
+                $("#hrefExcel").attr('href', '{{url('/download/')}}/'+data.filename+'.xls');
+                $("#linkExcel").show();
+            })
+                    .done(function() {
+                    })
+                    .fail(function() {
+                        alert( "Ocurrio un error mientras se procesaba la información" );
+                    })
+                    .always(function() {
+
+                    });
+            jqxhr.always(function() {
 
             });
         }
-        function chartSerial(div, datos) {
-            var chart = AmCharts.makeChart("chartdiv_"+div,{
-                "type"    : "serial",
-                "marginRight": 70,
-                "pathToImages": "http://cdn.amcharts.com/lib/3/images/", // required for grips
-                "chartScrollbar": {
-                    "updateOnReleaseOnly": true
-                },
-                "dataProvider"  : datos.resultado,
-                "valueAxes": [{
-                    "axisAlpha": 0,
-                    "position": "left"
-                }],
-                "startDuration": 1,
-                "graphs": [{
-                    "balloonText": "<b>[[category]]: [[value]]</b>",
-                    "fillColorsField": "color",
-                    "fillAlphas": 0.9,
-                    "lineAlpha": 0.2,
-                    "type": "column",
-                    "valueField": "count"
-                }],
-                "chartCursor": {
-                    "categoryBalloonEnabled": false,
-                    "cursorAlpha": 0,
-                    "zoomable": false
-                },
-                "categoryField": "nombre",
-                "categoryAxis": {
-                    "gridPosition": "start",
-                    "labelRotation": 45
-                },
-                "export": {
-                    "enabled": true,
-                    "libs": {
-                        "path": "../assets/global/plugins/amcharts/amcharts/export/libs/"
-                    }
-                }
-            });
-        }
     </script>
-    <script src="//cdn.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-    <link  type="text/css" href="//cdn.amcharts.com/lib/3/plugins/export/export.css" rel="stylesheet">
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
 @endsection
