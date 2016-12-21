@@ -52,13 +52,14 @@
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
                                     <div class="btn-group">
-                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle ladda-button" data-style="expand-left" data-toggle="dropdown"> <span class="ladda-label">Opciones</span>
                                             <i class="fa fa-angle-down"></i>
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
                                                 <a href="#" onClick="getExcel('marca_unidades')">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -82,8 +83,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('marca_importe')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -107,8 +109,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('departamento_unidades')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -132,8 +135,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('marca_importe')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -157,8 +161,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('categoria_unidades')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -182,8 +187,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('categoria_importe')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -207,8 +213,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('presentacion_unidades')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -232,8 +239,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('presentacion_importe')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -257,8 +265,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('producto_unidades')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -282,8 +291,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('producto_importe')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -307,8 +317,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('topproductos_unidades')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -332,8 +343,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('topproductos_importe')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -357,8 +369,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('toptiendas_unidades')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -382,8 +395,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('toptiendas_importe')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -396,6 +410,213 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="tab_inventario">
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Marcas por Unidades </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle ladda-button" data-style="expand-left" data-toggle="dropdown"> <span class="ladda-label">Opciones</span>
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#" onClick="getExcel('marca_unidades_inventario')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_marca_unidades_inventario" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_marca_unidades_inventario" style="display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Marcas por Importe </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#" onClick="getExcel('marca_importe_inventario')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_marca_importe_inventario" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_marca_importe_inventario" style="display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Departamentos por Unidades </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#" onClick="getExcel('departamento_unidades_inventario')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_departamento_unidades_inventario" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_departamento_unidades_inventario" style="display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Departamentos por Importe </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#" onClick="getExcel('departamento_importe_inventario')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_departamento_importe_inventario" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_departamento_importe_inventario" style="display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Categorias por Unidades</div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#" onClick="getExcel('categoria_unidades_inventario')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_categoria_unidades_inventario" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_categoria_unidades_inventario" style="display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Categorias por Importe</div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#" onClick="getExcel('categoria_importe_inventario')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_categoria_importe_inventario" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_categoria_importe_inventario" style="display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Presentación por Unidades </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#" onClick="getExcel('presentacion_unidades_inventario')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_presentacion_unidades_inventario" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_presentacion_unidades_inventario" style="display:none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="portlet box blue col-md-6">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-bar-chart-o"></i> Presentación por Importe </div>
+                                <div class="tools">
+                                    <a href="#" class="collapse" data-original-title="" title=""> </a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a href="#" onClick="getExcel('presentacion_importe_inventario')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="spinner_presentacion_importe_inventario" style="display:none"></div>
+                                <div class="contains-chart" id="chartdiv_presentacion_importe_inventario" style="display:none;"></div>
+                            </div>
+                        </div>
                         <div class="portlet box blue col-md-12">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -408,8 +629,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('inventarioexistencias')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -432,8 +654,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('inventarioimporte')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -458,8 +681,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('grupo')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -483,8 +707,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('formato')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -507,8 +732,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('cadena')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -531,8 +757,9 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">
-                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel</a>
+                                                <a href="#" onClick="getExcel('sucursal')">
+                                                    <i class="fa fa-file-excel-o"></i> Exportar a Excel
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -547,10 +774,10 @@
                     <div class="tab-pane fade" id="tab_documentos">
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="color-demo export-excel" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
-                                <div class="color-view bg-blue bg-font-blue bold uppercase"><img src="https://lh3.ggpht.com/GkNfqm17WFuzaIR87_oz690ErF63hL08Ngj73QtDxyWlCOF80d2gWd2GHrPLJJ-YmHYS=w300-rw" height="100px" width="100px"></div>
+                                <div class="color-view bg-blue bg-font-blue bold uppercase"><img src="https://assets.aftership.com/apps/svg/auto-fetch.svg" height="100px" width="100px"></div>
                                 <div class="color-info bg-white c-font-14 sbold"> Exportar a Excel </div>
                             </div>
-                            <div style="display:none;" id="linkExcel" class="text-center"><a id="hrefExcel" href="">Descargar</a></div>
+                            <div style="display:none;" id="linkExcel" class="text-center"><a id="hrefExcel" href="" download>Descargar</a></div>
                         </div>
                         <!-- <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="color-demo export-pdf" data-original-title="Click to view demos for this color" data-toggle="modal" data-target="#demo_modal_white">
@@ -566,10 +793,27 @@
     </div>
 
     <div class="clearfix"></div>
+
+
 @endsection
 @section('javascript')
     <script>
         $(function(){
+            $('#form-submit').click(function(e){
+                console.log("Iniciando");
+                e.preventDefault();
+                var l = Ladda.create(this);
+                l.start();
+                /*$.post("your-url",
+                        { data : data },
+                        function(response){
+                            console.log(response);
+                        }, "json")
+                        .always(function() { l.stop(); });
+                return false;*/
+            });
+
+
             $('#modalFiltros').modal('show');
 
             $(document).on( 'shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
@@ -622,6 +866,16 @@
             $("#chartdiv_topproductos_importe").hide();
             $("#chartdiv_toptiendas_unidades").hide();
             $("#chartdiv_toptiendas_importe").hide();
+            //INVENTARIOS
+            $("#chartdiv_marca_unidades_inventario").hide();
+            $("#chartdiv_marca_importe_inventario").hide();
+            $("#chartdiv_departamento_unidades_inventario").hide();
+            $("#chartdiv_departamento_importe_inventario").hide();
+            $("#chartdiv_categoria_unidades_inventario").hide();
+            $("#chartdiv_categoria_importe_inventario").hide();
+            $("#chartdiv_presentacion_unidades_inventario").hide();
+            $("#chartdiv_presentacion_importe_inventario").hide();
+
             $("#chartdiv_inventarioexistencias").hide();
             $("#chartdiv_inventarioimporte").hide();
             $("#chartdiv_grupo").hide();
@@ -631,23 +885,6 @@
 
             $("#modalFiltros").fadeOut(2000);
             setTimeout(function(){ $('#modalFiltros').modal('hide'); }, 2000);
-            /*$("#div_marca_unidades").empty();
-            $("#div_marca_importe").empty();
-            $("#div_departamento_unidades").empty();
-            $("#div_departamento_importe").empty();
-            $("#div_categoria_unidades").empty();
-            $("#div_categoria_importe").empty();
-            $("#div_presentacion_unidades").empty();
-            $("#div_presentacion_importe").empty();
-            $("#div_producto").empty();
-            $("#div_topproductos").empty();
-            $("#div_toptiendas").empty();
-            $("#div_inventarioexistencias").empty();
-            $("#div_inventarioimporte").empty();
-            $("#div_grupo").empty();
-            $("#div_formato").empty();
-            $("#div_cadena").empty();
-            $("#div_sucursal").empty();*/
             datosJson("marca_unidades", 1);
             datosJson("marca_importe", 1);
             datosJson("departamento_unidades", 1);
@@ -662,6 +899,16 @@
             datosJson("topproductos_importe", 2);
             datosJson("toptiendas_unidades", 2);
             datosJson("toptiendas_importe", 2);
+            //INVENTARIOS
+            datosJson("marca_unidades_inventario", 1);
+            datosJson("marca_importe_inventario", 1);
+            datosJson("departamento_unidades_inventario", 1);
+            datosJson("departamento_importe_inventario", 1);
+            datosJson("categoria_unidades_inventario", 1);
+            datosJson("categoria_importe_inventario", 1);
+            datosJson("presentacion_unidades_inventario", 1);
+            datosJson("presentacion_importe_inventario", 1);
+
             datosJson("inventarioexistencias", 2);
             datosJson("inventarioimporte", 2);
             datosJson("grupo", 1);
@@ -702,6 +949,8 @@
             };
             var jqxhr = $.post( "{{ url('/ajax/busqueda') }}", datos, function(data) {
                 $("#hrefExcel").attr('href', '{{url('/download/')}}/'+data.filename+'.xls');
+                console.log("Termine de Generar el excel");
+                $("#hrefExcel").trigger( "click" );
                 $("#linkExcel").show();
             })
                     .done(function() {
@@ -894,27 +1143,42 @@
             });
         }
         function getExcel(accion){
+            var tipoBusqueda = $('input[name=tipoBusqueda]:checked').val();
             var marca = $('.select2-marca').select2("val");
             var departamento = $('.select2-departamento').select2("val");
             var categoria = $('.select2-categoria').select2("val");
             var presentacion = $('.select2-presentacion').select2("val");
             var productos = $('.select2-productos').select2("val");
+            var grupos = $('.select2-grupo').select2("val");
+            var formatos = $('.select2-formato').select2("val");
+            var cadenas = $('.select2-cadena').select2("val");
+            var sucursales = $('.select2-sucursal').select2("val");
             var fechaS = $('#rangoFecha').data('daterangepicker').startDate.format('YYYY-MM-DD');
             var fechaF = $('#rangoFecha').data('daterangepicker').endDate.format('YYYY-MM-DD');
             var datos = {
+                tipoBusqueda: tipoBusqueda,
                 marca: marca,
                 departamento: departamento,
                 categoria: categoria,
                 presentacion: presentacion,
                 productos: productos,
+                grupos: grupos,
+                formatos: formatos,
+                cadenas: cadenas,
+                sucursales: sucursales,
                 fechaS: fechaS,
                 fechaF: fechaF,
+                chart: 0,
                 accion: accion,
                 type: 1
             };
             var jqxhr = $.post( "{{ url('/ajax/busqueda') }}", datos, function(data) {
-                $("#hrefExcel").attr('href', '{{url('/download/')}}/'+data.filename+'.xls');
-                $("#linkExcel").show();
+                console.log('Comenzando descarga');
+                var url = '{{url('/download/')}}/'+data.filename+'.xls';
+                var link = document.createElement('a');
+                link.href = url;
+                link.download = '{{url('/download/')}}/'+data.filename+'.xls';
+                link.dispatchEvent(new MouseEvent('click'));
             })
                     .done(function() {
                     })

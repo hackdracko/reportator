@@ -38,6 +38,7 @@
     <link href="{{ asset('../assets/layouts/layout/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('../assets/global/plugins/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('../assets/global/plugins/select2/css/select2-bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('../assets/global/plugins/ladda/ladda-themeless.min.css')}}" rel="stylesheet" type="text/css" />
 
     <style>
 
@@ -579,7 +580,7 @@
                     </li>
                     <li class="nav-item start {{ Request::is('reportes') ? 'active open' : '' }}">
                         <a href="{{ url('/reportes') }}" class="nav-link nav-toggle">
-                            <i class="icon-home"></i>
+                            <i class="fa fa-bar-chart-o"></i>
                             <span class="title">Reporteador</span>
                             <span class="selected"></span>
                         </a>
@@ -863,16 +864,6 @@
 <script src="{{ asset('../assets/global/plugins/counterup/jquery.waypoints.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/counterup/jquery.counterup.min.js') }}" type="text/javascript"></script>
 
-<!--<script src="{{ asset('../assets/global/plugins/amcharts/amcharts/amcharts.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/amcharts/amcharts/serial.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/amcharts/amcharts/pie.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/amcharts/amcharts/radar.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/amcharts/amcharts/themes/light.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/amcharts/amcharts/themes/patterns.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/amcharts/amcharts/themes/chalk.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/amcharts/ammap/ammap.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/amcharts/ammap/maps/js/worldLow.js') }}" type="text/javascript"></script>
-<script src="{{ asset('../assets/global/plugins/amcharts/amstockcharts/amstock.js') }}" type="text/javascript"></script>-->
 <script src="{{ asset('../assets/global/plugins/fullcalendar/fullcalendar.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/horizontal-timeline/horizontal-timeline.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/flot/jquery.flot.min.js') }}" type="text/javascript"></script>
@@ -901,6 +892,9 @@
 <script src="{{ asset('../assets/layouts/global/scripts/quick-nav.min.js') }}" type="text/javascript"></script>
 
 <script src="{{ asset('../assets/global/plugins/select2/js/select2.full.min.js') }}" type="text/javascript"></script>
+
+<script src="{{ asset('../assets/global/plugins/ladda/spin.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('../assets/global/plugins/ladda/ladda.min.js') }}" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
 <script type="text/javascript">
     $.ajaxSetup({

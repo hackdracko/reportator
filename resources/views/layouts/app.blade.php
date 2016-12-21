@@ -47,7 +47,7 @@
     </head>
     <!-- END HEAD -->
     <div class="col-md-12">
-        <img src="https://lh6.googleusercontent.com/-co7p2e2weVQ/AAAAAAAAAAI/AAAAAAAAADE/xeN8i52f0XQ/photo.jpg" width="150px" alt="" />
+        <img src="https://lh6.googleusercontent.com/-co7p2e2weVQ/AAAAAAAAAAI/AAAAAAAAADE/xeN8i52f0XQ/photo.jpg" width="150 px" alt="" />
     </div>
     <body class=" login">
         <!-- BEGIN LOGO -->

@@ -266,40 +266,80 @@ class AjaxController extends Controller
                 ->join('catxdivision', 'concentradov.division', '=', 'catxdivision.id')
                 ->select('catxdivision.id as id', 'catxdivision.nombre as nombre', DB::raw('sum(ventasUnidades) as count'));
         }
+        if($accion == 'marca_unidades_inventario'){
+            $queryConcentradov->groupBy('division')
+                ->join('catxdivision', 'concentradov.division', '=', 'catxdivision.id')
+                ->select('catxdivision.id as id', 'catxdivision.nombre as nombre', DB::raw('sum(existenciasUnidades) as count'));
+        }
         if($accion == 'marca_importe'){
             $queryConcentradov->groupBy('division')
                 ->join('catxdivision', 'concentradov.division', '=', 'catxdivision.id')
                 ->select('catxdivision.id as id', 'catxdivision.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
+        }
+        if($accion == 'marca_importe_inventario'){
+            $queryConcentradov->groupBy('division')
+                ->join('catxdivision', 'concentradov.division', '=', 'catxdivision.id')
+                ->select('catxdivision.id as id', 'catxdivision.nombre as nombre', DB::raw('sum(existenciasImporte) as count'));
         }
         if($accion == 'departamento_unidades'){
             $queryConcentradov->groupBy('categoria')
                 ->join('catxcategoria', 'concentradov.categoria', '=', 'catxcategoria.id')
                 ->select('catxcategoria.id as id', 'catxcategoria.nombre as nombre', DB::raw('sum(ventasUnidades) as count'));
         }
+        if($accion == 'departamento_unidades_inventario'){
+            $queryConcentradov->groupBy('categoria')
+                ->join('catxcategoria', 'concentradov.categoria', '=', 'catxcategoria.id')
+                ->select('catxcategoria.id as id', 'catxcategoria.nombre as nombre', DB::raw('sum(existenciasUnidades) as count'));
+        }
         if($accion == 'departamento_importe'){
             $queryConcentradov->groupBy('categoria')
                 ->join('catxcategoria', 'concentradov.categoria', '=', 'catxcategoria.id')
                 ->select('catxcategoria.id as id', 'catxcategoria.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
+        }
+        if($accion == 'departamento_importe_inventario'){
+            $queryConcentradov->groupBy('categoria')
+                ->join('catxcategoria', 'concentradov.categoria', '=', 'catxcategoria.id')
+                ->select('catxcategoria.id as id', 'catxcategoria.nombre as nombre', DB::raw('sum(existenciasImporte) as count'));
         }
         if($accion == 'categoria_unidades'){
             $queryConcentradov->groupBy('subcategoria')
                 ->join('catxsubcategoria', 'concentradov.subcategoria', '=', 'catxsubcategoria.id')
                 ->select('catxsubcategoria.id as id', 'catxsubcategoria.nombre as nombre', DB::raw('sum(ventasUnidades) as count'));
         }
+        if($accion == 'categoria_unidades_inventario'){
+            $queryConcentradov->groupBy('subcategoria')
+                ->join('catxsubcategoria', 'concentradov.subcategoria', '=', 'catxsubcategoria.id')
+                ->select('catxsubcategoria.id as id', 'catxsubcategoria.nombre as nombre', DB::raw('sum(existenciasUnidades) as count'));
+        }
         if($accion == 'categoria_importe'){
             $queryConcentradov->groupBy('subcategoria')
                 ->join('catxsubcategoria', 'concentradov.subcategoria', '=', 'catxsubcategoria.id')
                 ->select('catxsubcategoria.id as id', 'catxsubcategoria.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
+        }
+        if($accion == 'categoria_importe_inventario'){
+            $queryConcentradov->groupBy('subcategoria')
+                ->join('catxsubcategoria', 'concentradov.subcategoria', '=', 'catxsubcategoria.id')
+                ->select('catxsubcategoria.id as id', 'catxsubcategoria.nombre as nombre', DB::raw('sum(existenciasImporte) as count'));
         }
         if($accion == 'presentacion_unidades'){
             $queryConcentradov->groupBy('modelo')
                 ->join('catxmodelo', 'concentradov.modelo', '=', 'catxmodelo.id')
                 ->select('catxmodelo.id as id', 'catxmodelo.nombre as nombre', DB::raw('sum(ventasUnidades) as count'));
         }
+        if($accion == 'presentacion_unidades_inventario'){
+            $queryConcentradov->groupBy('modelo')
+                ->join('catxmodelo', 'concentradov.modelo', '=', 'catxmodelo.id')
+                ->select('catxmodelo.id as id', 'catxmodelo.nombre as nombre', DB::raw('sum(existenciasUnidades) as count'));
+        }
         if($accion == 'presentacion_importe'){
             $queryConcentradov->groupBy('modelo')
                 ->join('catxmodelo', 'concentradov.modelo', '=', 'catxmodelo.id')
                 ->select('catxmodelo.id as id', 'catxmodelo.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
+        }
+        if($accion == 'presentacion_importe_inventario'){
+            $queryConcentradov->groupBy('modelo')
+                ->join('catxmodelo', 'concentradov.modelo', '=', 'catxmodelo.id')
+                ->select('catxmodelo.id as id', 'catxmodelo.nombre as nombre', DB::raw('sum(existenciasImporte) as count'));
         }
         if($accion == 'producto_unidades'){
             $queryConcentradov
@@ -442,40 +482,80 @@ class AjaxController extends Controller
                 ->join('catxdivision', 'concentradov.division', '=', 'catxdivision.id')
                 ->select('catxdivision.id as id', 'catxdivision.nombre as nombre', DB::raw('sum(ventasUnidades) as count'));
         }
+        if($accion == 'marca_unidades_inventario'){
+            $queryConcentradov->groupBy('division')
+                ->join('catxdivision', 'concentradov.division', '=', 'catxdivision.id')
+                ->select('catxdivision.id as id', 'catxdivision.nombre as nombre', DB::raw('sum(existenciasUnidades) as count'));
+        }
         if($accion == 'marca_importe'){
             $queryConcentradov->groupBy('division')
                 ->join('catxdivision', 'concentradov.division', '=', 'catxdivision.id')
                 ->select('catxdivision.id as id', 'catxdivision.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
+        }
+        if($accion == 'marca_importe_inventario'){
+            $queryConcentradov->groupBy('division')
+                ->join('catxdivision', 'concentradov.division', '=', 'catxdivision.id')
+                ->select('catxdivision.id as id', 'catxdivision.nombre as nombre', DB::raw('sum(existenciasImporte) as count'));
         }
         if($accion == 'departamento_unidades'){
             $queryConcentradov->groupBy('categoria')
                 ->join('catxcategoria', 'concentradov.categoria', '=', 'catxcategoria.id')
                 ->select('catxcategoria.id as id', 'catxcategoria.nombre as nombre', DB::raw('sum(ventasUnidades) as count'));
         }
+        if($accion == 'departamento_unidades_inventario'){
+            $queryConcentradov->groupBy('categoria')
+                ->join('catxcategoria', 'concentradov.categoria', '=', 'catxcategoria.id')
+                ->select('catxcategoria.id as id', 'catxcategoria.nombre as nombre', DB::raw('sum(existenciasUnidades) as count'));
+        }
         if($accion == 'departamento_importe'){
             $queryConcentradov->groupBy('categoria')
                 ->join('catxcategoria', 'concentradov.categoria', '=', 'catxcategoria.id')
                 ->select('catxcategoria.id as id', 'catxcategoria.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
+        }
+        if($accion == 'departamento_importe_inventario'){
+            $queryConcentradov->groupBy('categoria')
+                ->join('catxcategoria', 'concentradov.categoria', '=', 'catxcategoria.id')
+                ->select('catxcategoria.id as id', 'catxcategoria.nombre as nombre', DB::raw('sum(existenciasImporte) as count'));
         }
         if($accion == 'categoria_unidades'){
             $queryConcentradov->groupBy('subcategoria')
                 ->join('catxsubcategoria', 'concentradov.subcategoria', '=', 'catxsubcategoria.id')
                 ->select('catxsubcategoria.id as id', 'catxsubcategoria.nombre as nombre', DB::raw('sum(ventasUnidades) as count'));
         }
+        if($accion == 'categoria_unidades_inventario'){
+            $queryConcentradov->groupBy('subcategoria')
+                ->join('catxsubcategoria', 'concentradov.subcategoria', '=', 'catxsubcategoria.id')
+                ->select('catxsubcategoria.id as id', 'catxsubcategoria.nombre as nombre', DB::raw('sum(existenciasUnidades) as count'));
+        }
         if($accion == 'categoria_importe'){
             $queryConcentradov->groupBy('subcategoria')
                 ->join('catxsubcategoria', 'concentradov.subcategoria', '=', 'catxsubcategoria.id')
                 ->select('catxsubcategoria.id as id', 'catxsubcategoria.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
+        }
+        if($accion == 'categoria_importe_inventario'){
+            $queryConcentradov->groupBy('subcategoria')
+                ->join('catxsubcategoria', 'concentradov.subcategoria', '=', 'catxsubcategoria.id')
+                ->select('catxsubcategoria.id as id', 'catxsubcategoria.nombre as nombre', DB::raw('sum(existenciasImporte) as count'));
         }
         if($accion == 'presentacion_unidades'){
             $queryConcentradov->groupBy('modelo')
                 ->join('catxmodelo', 'concentradov.modelo', '=', 'catxmodelo.id')
                 ->select('catxmodelo.id as id', 'catxmodelo.nombre as nombre', DB::raw('sum(ventasUnidades) as count'));
         }
+        if($accion == 'presentacion_unidades_inventario'){
+            $queryConcentradov->groupBy('modelo')
+                ->join('catxmodelo', 'concentradov.modelo', '=', 'catxmodelo.id')
+                ->select('catxmodelo.id as id', 'catxmodelo.nombre as nombre', DB::raw('sum(existenciasUnidades) as count'));
+        }
         if($accion == 'presentacion_importe'){
             $queryConcentradov->groupBy('modelo')
                 ->join('catxmodelo', 'concentradov.modelo', '=', 'catxmodelo.id')
                 ->select('catxmodelo.id as id', 'catxmodelo.nombre as nombre', DB::raw('sum(ventasImporte) as count'));
+        }
+        if($accion == 'presentacion_importe_inventario'){
+            $queryConcentradov->groupBy('modelo')
+                ->join('catxmodelo', 'concentradov.modelo', '=', 'catxmodelo.id')
+                ->select('catxmodelo.id as id', 'catxmodelo.nombre as nombre', DB::raw('sum(existenciasImporte) as count'));
         }
         if($accion == 'producto_unidades'){
             $queryConcentradov
