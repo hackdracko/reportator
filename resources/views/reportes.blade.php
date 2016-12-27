@@ -52,7 +52,7 @@
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
                                     <div class="btn-group">
-                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle ladda-button" data-style="expand-left" data-toggle="dropdown"> <span class="ladda-label">Opciones</span>
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
                                             <i class="fa fa-angle-down"></i>
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
@@ -417,7 +417,7 @@
                                 <div class="tools">
                                     <a href="#" class="collapse" data-original-title="" title=""> </a>
                                     <div class="btn-group">
-                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle ladda-button" data-style="expand-left" data-toggle="dropdown"> <span class="ladda-label">Opciones</span>
+                                        <button type="button" class="btn green btn-sm btn-outlin dropdown-toggle" data-toggle="dropdown"> Opciones
                                             <i class="fa fa-angle-down"></i>
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
@@ -1148,6 +1148,7 @@
             window.setTimeout(initializeChart, 200);
         }
         function getDocumento(accion, tipo){
+            $.blockUI({ message: '<h1><img src="http://playfm.cl/playfm/imag/master/iconoCargando.gif" /></h1>' });
             var tipoBusqueda = $('input[name=tipoBusqueda]:checked').val();
             var marca = $('.select2-marca').select2("val");
             var departamento = $('.select2-departamento').select2("val");
@@ -1191,11 +1192,13 @@
                 link.href = url;
                 link.download = '{{url('/download/')}}/'+data.filename+'.'+extension;
                 link.dispatchEvent(new MouseEvent('click'));
+                $.unblockUI();
             })
                     .done(function() {
                     })
                     .fail(function() {
                         alert( "Ocurrio un error mientras se procesaba la información" );
+                        $.unblockUI();
                     })
                     .always(function() {
 
