@@ -5,7 +5,7 @@
     </div>
     <!-- END PAGE BAR -->
     <!-- BEGIN PAGE TITLE-->
-    <h1 class="page-title"> Bienvenido al Sistema de Reportes
+    <h1 class="page-title"> Bienvenido <b>{{Auth::user()->name}}</b> al Sistema de Reportes
         <small>Estadisticas, Reportes, etc</small>
     </h1>
     <!-- END PAGE TITLE-->

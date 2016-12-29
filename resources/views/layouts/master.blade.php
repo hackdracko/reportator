@@ -39,6 +39,7 @@
     <link href="{{ asset('../assets/global/plugins/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('../assets/global/plugins/select2/css/select2-bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('../assets/global/plugins/ladda/ladda-themeless.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('../assets/global/plugins/bootstrap-sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css" />
 
     <style>
 
@@ -530,8 +531,15 @@
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <img alt="" class="img-circle" src="https://pbs.twimg.com/profile_images/748905631713603584/9l8RG7in.jpg" />
-                            <span class="username username-hide-on-mobile"> Evolve </span>
+                            <span class="username username-hide-on-mobile"> {{ Auth::user()->name }} </span>
+                            <i class="fa fa-angle-down"></i>
                         </a>
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="{{ url('/retail/usuarios/'.Auth::user()->id.'/edit') }}">
+                                    <i class="icon-user"></i> Mi Perfil </a>
+                            </li>
+                        </ul>
                     </li>
                     <!-- END USER LOGIN DROPDOWN -->
                     <!-- BEGIN QUICK SIDEBAR TOGGLER -->
@@ -574,6 +582,16 @@
                         <div class="sidebar-toggler">
                             <span></span>
                         </div>
+                    </li>
+                    <li class="heading">
+                        <h3 class="uppercase">Administración</h3>
+                    </li>
+                    <li class="nav-item start {{ Request::is('/retail/usuarios/') ? 'active open' : '' }}">
+                        <a href="{{ url('/retail/usuarios/') }}" class="nav-link nav-toggle">
+                            <i class="fa fa-user"></i>
+                            <span class="title">Usuarios</span>
+                            <span class="selected"></span>
+                        </a>
                     </li>
                     <li class="heading">
                         <h3 class="uppercase">Reportes</h3>
@@ -896,6 +914,7 @@
 
 <script src="{{ asset('../assets/global/plugins/ladda/spin.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('../assets/global/plugins/ladda/ladda.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('../assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js') }}" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
 <script type="text/javascript">
     $.ajaxSetup({

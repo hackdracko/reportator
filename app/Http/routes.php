@@ -14,6 +14,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', function () {
         return view('home');
     });
+    Route::resource('/retail/usuarios', 'UserController');
+    Route::get('/retail/usuarios/logicaldelete/{id}', 'UserController@logicaldelete');
 });
 
 Route::resource('/reportes', 'ReporteController');

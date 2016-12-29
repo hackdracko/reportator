@@ -11,7 +11,7 @@
     <div class="page-bar">
         <ul class="page-breadcrumb">
             <li>
-                <a href="{{ url('/reportes') }}">Reporteador</a>
+                <a href="{{ url('/retail/usuarios/1') }}">Reporteador</a>
                 <i class="fa fa-circle"></i>
             </li>
             <li>
@@ -21,6 +21,12 @@
     </div>
 
     <div class="row">
+        @if (Session::has('message'))
+            <div class="alert alert-{{ Session::get('message')[0] }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                {{ Session::get('message')[1] }}
+            </div>
+        @endif
         <div class="portlet light bordered">
             <div class="portlet-title">
                 <div class="caption">
