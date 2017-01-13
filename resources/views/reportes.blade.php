@@ -805,21 +805,6 @@
 @section('javascript')
     <script>
         $(function(){
-            $('#form-submit').click(function(e){
-                console.log("Iniciando");
-                e.preventDefault();
-                var l = Ladda.create(this);
-                l.start();
-                /*$.post("your-url",
-                        { data : data },
-                        function(response){
-                            console.log(response);
-                        }, "json")
-                        .always(function() { l.stop(); });
-                return false;*/
-            });
-
-
             $('#modalFiltros').modal('show');
 
             $(document).on( 'shown.bs.tab', 'a[data-toggle="tab"]', function (e) {

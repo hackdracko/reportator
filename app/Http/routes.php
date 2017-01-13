@@ -12,10 +12,16 @@
 */
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', function () {
-        return view('home');
+        return view('reportes');
     });
     Route::resource('/retail/usuarios', 'UserController');
     Route::get('/retail/usuarios/logicaldelete/{id}', 'UserController@logicaldelete');
+    Route::resource('/retail/cuentas', 'CuentaController');
+    Route::get('/retail/cuentas/logicaldelete/{id}', 'CuentaController@logicaldelete');
+    Route::resource('/retail/informacion', 'InformacionController');
+    Route::get('/retail/informacion/fechas/{id}', 'InformacionController@fechas');
+    Route::post('/retail/informacion/fechas/{id}', 'InformacionController@fechas');
+    Route::post('/retail/informacion/descargaRobot', 'InformacionController@descargaRobot');
 });
 
 Route::resource('/reportes', 'ReporteController');

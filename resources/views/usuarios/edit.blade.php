@@ -79,6 +79,20 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label>Asignar Cuenta</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    <select name="cuenta">
+                                        <option value="0">Selecciona</option>
+                                        @foreach($cuentas as $cuenta)
+                                            <option value="{{$cuenta->id}}" {{($user->cuenta==$cuenta->id) ? 'selected' : ''}}>{{$cuenta->nombreProyecto}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label>Estatus</label>
                                 <div class="input-group">
                                     <select name="estatus" class="form-control">

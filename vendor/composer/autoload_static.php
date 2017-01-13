@@ -283,6 +283,7 @@ class ComposerStaticInitaa996c73b4b59b8a334b9015e322f8b1
     public static $classMap = array (
         'Absolute_Positioner' => __DIR__ . '/..' . '/dompdf/dompdf/include/absolute_positioner.cls.php',
         'Abstract_Renderer' => __DIR__ . '/..' . '/dompdf/dompdf/include/abstract_renderer.cls.php',
+        'AddColumnCuentaUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_13_005507_add_column_cuenta_users_table.php',
         'AddColumnEstatusUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_202940_add_column_estatus_users_table.php',
         'Adobe_Font_Metrics' => __DIR__ . '/..' . '/phenx/php-font-lib/classes/Adobe_Font_Metrics.php',
         'Attribute_Translator' => __DIR__ . '/..' . '/dompdf/dompdf/include/attribute_translator.cls.php',

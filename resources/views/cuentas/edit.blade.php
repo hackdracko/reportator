@@ -4,15 +4,15 @@
     <div class="page-bar">
         <ul class="page-breadcrumb">
             <li>
-                <a href="{{ url('/retail/usuarios/') }}">Usuarios</a>
+                <a href="{{ url('/retail/cuentas/') }}">Cuentas</a>
                 <i class="fa fa-circle"></i>
-            <li>
-                <span>Alta</span>
-            </li>
+                <li>
+                    <span>Edición</span>
+                </li>
             </li>
         </ul>
     </div>
-    <h1 class="page-title text-center"> Creación de Usuario
+    <h1 class="page-title text-center"> Edición de la Cuenta <b>{{ $cuenta->nombreCadena }}</b>
     </h1>
     <div class="row">
         <div class="col-md-offset-1 col-md-10">
@@ -29,17 +29,18 @@
                     {{ Session::get('message')[1] }}
                 </div>
             @endif
-        <!-- BEGIN SAMPLE FORM PORTLET-->
+            <!-- BEGIN SAMPLE FORM PORTLET-->
             <div class="portlet light bordered">
                 <div class="portlet-title">
                     <div class="caption font-yellow-gold">
                         <i class="icon-settings font-yellow-gold"></i>
-                        <span class="caption-subject bold uppercase"> Creación de Usuario</span>
+                        <span class="caption-subject bold uppercase"> Edición de la Cuenta</span>
                     </div>
                 </div>
                 <div class="portlet-body form">
-                    <form action="{{ url('/retail/usuarios') }}" method="POST" class="form-horizontal">
+                    <form action="{{ url('/retail/cuentas/'.$cuenta->id) }}" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
+                        <input type="hidden" name="_method" value="PUT">
                         <div class="form-body">
                             <div class="form-group">
                                 <label>Nombre</label>
@@ -47,47 +48,24 @@
                                     <span class="input-group-addon">
                                         <i class="fa fa-user"></i>
                                     </span>
-                                    <input type="text" class="form-control" name="nombre" id="nombre" value="{{old('nombre')}}">
+                                    <input type="text" class="form-control" name="usuario" id="usuario" value="{{ $cuenta->usuario }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="fa fa-envelope"></i>
-                                    </span>
-                                    <input type="text" class="form-control" name="email" id="email" value="{{old('email')}}">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
                                         <i class="fa fa-key"></i>
                                     </span>
-                                    <input type="password" class="form-control" name="password" id="password" value="{{old('password')}}">
+                                    <input type="text" class="form-control" name="password" id="password" value="{{ $cuenta->password }}">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Repite Password</label>
+                                <label>Estatus</label>
                                 <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="fa fa-key"></i>
-                                    </span>
-                                    <input type="password" class="form-control" name="rpassword" id="rpassword" value="{{old('rpassword')}}">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Asignar Cuenta</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <select name="cuenta">
-                                        <option value="0">Selecciona</option>
-                                        @foreach($cuentas as $cuenta)
-                                            <option value="{{$cuenta->id}}">{{$cuenta->nombreProyecto}}</option>
-                                        @endforeach
+                                    <select name="estatus" class="form-control">
+                                        <option value="1" {{($cuenta->activo==1) ? 'selected' : ''}}>Activo</option>
+                                        <option value="0" {{($cuenta->activo==0) ? 'selected' : ''}}>Inactivo</option>
                                     </select>
                                 </div>
                             </div>

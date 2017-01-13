@@ -77,20 +77,6 @@
                                     <input type="password" class="form-control" name="rpassword" id="rpassword" value="{{old('rpassword')}}">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Asignar Cuenta</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <select name="cuenta">
-                                        <option value="0">Selecciona</option>
-                                        @foreach($cuentas as $cuenta)
-                                            <option value="{{$cuenta->id}}">{{$cuenta->nombreProyecto}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
                         </div>
                         <div class="form-actions">
                             <button type="submit" class="btn blue">Guardar</button>

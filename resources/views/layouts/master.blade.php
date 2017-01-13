@@ -593,6 +593,25 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle {{ Request::is('/retail/cuentas') ? 'active open' : '' }}">
+                            <i class="icon-pointer"></i>
+                            <span class="title">Portales</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu" style="display: none;">
+                            <li class="nav-item  {{ Request::is('/retail/cuentas') ? 'active open' : '' }}">
+                                <a href="{{ url('/retail/cuentas/') }}" class="nav-link ">
+                                    <span class="title">Cuentas</span>
+                                </a>
+                            </li>
+                            <li class="nav-item  ">
+                                <a href="{{ url('/retail/informacion/') }}" class="nav-link ">
+                                    <span class="title">Descargar Información</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="heading">
                         <h3 class="uppercase">Reportes</h3>
                     </li>
@@ -603,6 +622,7 @@
                             <span class="selected"></span>
                         </a>
                     </li>
+
                     <!--<li class="heading">
                         <h3 class="uppercase">Administracion</h3>
                     </li>
@@ -918,6 +938,8 @@
 <!-- END THEME LAYOUT SCRIPTS -->
 <script type="text/javascript">
     $.ajaxSetup({
+        timeout : 90000,
+        cache : true,
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }

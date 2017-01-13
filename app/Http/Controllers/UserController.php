@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cuenta;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('usuarios.create');
+        $cuentas = Cuenta::select('id', 'nombreProyecto')
+                            ->orderBy('nombreProyecto')
+                            ->groupBy('nombreProyecto');
+        return view('usuarios.create')->withCuentas($cuentas->get());
     }
 
     /**
@@ -48,6 +52,7 @@ class UserController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:8',
             'rpassword' => 'required',
+            'cuenta' => 'required|not_in:0',
         ]);
 
         if ($validator->fails()) {
@@ -57,6 +62,7 @@ class UserController extends Controller
         }else{
             $name = $request->nombre;
             $email = $request->email;
+            $cuenta = $request->cuenta;
             if($request->password != $request->rpassword){
                 Session::flash('message', array('danger','El Password y Repite Password deben ser iguales'));
                 return Redirect::to('/retail/usuarios/create')->withInput();
@@ -67,6 +73,7 @@ class UserController extends Controller
             $user->name = $name;
             $user->email = $email;
             $user->password = Hash::make($password);
+            $user->cuenta = $cuenta;
             $user->save();
             Session::flash('message', array('info','El Usuario se Guardo Correctamente.'));
             return Redirect::to('/retail/usuarios');
@@ -92,8 +99,13 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        $cuentas = Cuenta::select('id', 'nombreProyecto')
+            ->orderBy('nombreProyecto')
+            ->groupBy('nombreProyecto');
         $user = User::findOrFail($id);
-        return view("usuarios.edit")->withUser($user);
+        return view("usuarios.edit")
+                ->withUser($user)
+                ->withCuentas($cuentas->get());
     }
 
     /**
@@ -111,6 +123,7 @@ class UserController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:8',
             'rpassword' => 'required',
+            'cuenta' => 'required|not_in:0',
         ]);
 
 
@@ -121,6 +134,7 @@ class UserController extends Controller
         }else{
             $user->name = $request->nombre;
             $user->email = $request->email;
+            $user->cuenta = $request->cuenta;
             $user->estatus = $request->estatus;
             if($request->password != 'password'){
                 if($request->password != $request->rpassword){
